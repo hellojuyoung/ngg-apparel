@@ -75,10 +75,10 @@
         <div class="utilmenu">
           <ul>
             <li class="zzim">
-              <a href=""><i class="xi-heart-o icon"></i></a>
+              <a href="javascript:voild();" onclick="document.querySelector('.layer-pop.zzim').classList.add('on');"><i class="xi-heart-o icon"></i></a>
             </li>
             <li class="cart">
-              <a href=""><i class="xi-cart-o icon"></i><span class="num">0</span></a>
+              <a href="javascript:void();" onclick="document.querySelector('.layer-pop.cart').classList.add('on');"><i class="xi-cart-o icon"></i><span class="ico-num">4</span></a>
             </li>
           </ul>
         </div>
@@ -105,6 +105,9 @@
 
       <!-- zzim layer pop : s -->
       <div class="layer-pop zzim">
+        <a href="javascript:void();" class="close" onclick="closeLayer();">
+          <i class="xi-close"><span class="blind">닫기</span></i>
+        </a>
         <div class="layer-wrap">
           <div class="cont-top">
             <h2 class="tit">WISH LIST</h2>
@@ -112,47 +115,236 @@
           <div class="view-zzim">
             <table class="list-table">
               <caption class="blind">
-                찜한 목록 제목
+                위시리스트 제목
               </caption>
               <colgroup>
-                <col style="width: 5%;" />
-                <col style="width: 45%;" />
-                <col style="width: 10%;" />
-                <col style="width: 25%;" />
-                <col style="width: 15%;" />
+                <col style="width: 30px;" />
+                <col style="width: auto;" />
               </colgroup>
               <thead>
                 <tr class="table-head">
-                  <td>
-                    <input type="checkbox" class="list-checkbox" />
+                  <td id="th-select">
+                    <label class="label-check all-select">
+                      <input type="checkbox" name="allCheck" class="ico-check" />
+                    </label>
                     <span class="blind">전체 선택</span>
                   </td>
-                  <td>상품/옵션 정보</td>
-                  <td>수량</td>
-                  <td>상품금액</td>
-                  <td>배송비</td>
+                  <td id="th-info">상품/옵션 정보</td>
+                  <td id="th-delete" class="blind">리스트 삭제</td>
                 </tr>
               </thead>
               <tbody>
-                <tr class="table-list">
-                  <td>
-                    <input type="checkbox" class="list-checkbox" />
-                    <span class="blind">제품 선택</span>
+                <tr class="table-list view-prod no-list">
+                  <td colspan="2">
+                    <span class="notice">WISH LIST에 담긴 상품이 없습니다.</span>
                   </td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
                 </tr>
               </tbody>
             </table>
           </div>
+          <!-- cart control : s -->
+          <div class="list-table-control">
+            <button type="button" class="mid btn-line delete">선택 상품 삭제</button>
+            <button type="button" class="mid btn-line add-cart">CART LIST 추가</button>
+          </div>
+          <!-- cart control : e -->
         </div>
       </div>
       <!-- zzim layer pop : e -->
 
       <!-- cart layer pop : s -->
-      <!--<div class="layer-pop cart"></div>-->
+      <div class="layer-pop cart">
+        <a href="javascript:void();" class="close" onclick="closeLayer();">
+          <i class="xi-close"><span class="blind">닫기</span></i>
+        </a>
+        <div class="layer-wrap">
+          <div class="cont-top">
+            <h2 class="tit">SHOPPING LIST</h2>
+          </div>
+          <div class="view-cart">
+            <table class="list-table">
+              <caption class="blind">
+                쇼핑리스트 제목
+              </caption>
+              <colgroup>
+                <col style="width: 30px;" />
+                <col style="width: 45%;" />
+                <col style="width: 10%;" />
+                <col style="width: 20%;" />
+                <col style="width: 10%;" />
+                <col style="width: auto;" />
+              </colgroup>
+              <thead>
+                <tr class="table-head">
+                  <td id="th-select">
+                    <label class="label-check all-select">
+                      <input type="checkbox" name="allCheck" class="ico-check" />
+                    </label>
+                    <span class="blind">전체 선택</span>
+                  </td>
+                  <td id="th-info">상품/옵션 정보</td>
+                  <td id="th-quantity">수량</td>
+                  <td id="th-total-price">상품금액</td>
+                  <td id="th-delivery-fee">배송비</td>
+                  <td id="th-delete" class="blind">리스트 삭제</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="table-list view-prod">
+                  <td header="th-select" class="select-list">
+                    <label class="label-check">
+                      <input type="checkbox" class="ico-check" />
+                    </label>
+                    <span class="blind">제품 선택</span>
+                  </td>
+                  <td header="th-info" class="list-info">
+                    <div class="prod-img-box">
+                      <img src="./img/item/N202UTS510.png" alt="N202UTS510" />
+                    </div>
+                    <div class="prod-info-box">
+                      <a href="javascript:void();" class="name">내셔널지오그래픽 N202UTS510 핫 썸머 컨셉 티셔츠 1 ORANGE</a>
+                      <span class="prod-size">SIZE<span class="size-num">95</span></span>
+                    </div>
+                  </td>
+                  <td header="th-quantity" class="list-quantity"><span class="quantity">1</span></td>
+                  <td header="th-total-price" class="list-total-price">
+                    <span class="cost"><span class="cost-price">0</span>원</span><span class="total-price">59,000</span>원
+                  </td>
+                  <td header="th-delivery-fee" class="list-delivery-fee">
+                    <span class="delivery-fee">0</span><span class="small-notice">3만원 이상<br />무료배송</span>
+                  </td>
+                  <td id="th-delete">
+                    <a href="" class="delete"><i class="xi-close"></i></a>
+                  </td>
+                </tr>
+                <tr class="table-list view-prod">
+                  <td header="th-select" class="select-list">
+                    <label class="label-check">
+                      <input type="checkbox" class="ico-check" />
+                    </label>
+                    <span class="blind">제품 선택</span>
+                  </td>
+                  <td header="th-info" class="list-info">
+                    <div class="prod-img-box">
+                      <img src="./img/item/N202MBS610.png" alt="N202UTS510" />
+                    </div>
+                    <div class="prod-info-box">
+                      <a href="javascript:void();" class="name">내셔널지오그래픽 N202MBS610 남성 4부 립스탑 조직 보드숏 CARBON BLACK</a>
+                      <span class="prod-size">SIZE<span class="size-num">100</span></span>
+                    </div>
+                  </td>
+                  <td header="th-quantity" class="list-quantity"><span class="quantity">1</span></td>
+                  <td header="th-total-price" class="list-total-price">
+                    <span class="cost"><span class="cost-price">0</span>원</span><span class="total-price">59,000</span>원
+                  </td>
+                  <td header="th-delivery-fee" class="list-delivery-fee">
+                    <span class="delivery-fee">0</span><span class="small-notice">3만원 이상<br />무료배송</span>
+                  </td>
+                  <td id="th-delete">
+                    <a href="" class="delete"><i class="xi-close"></i></a>
+                  </td>
+                </tr>
+                <tr class="table-list view-prod">
+                  <td header="th-select" class="select-list">
+                    <label class="label-check">
+                      <input type="checkbox" class="ico-check" />
+                    </label>
+                    <span class="blind">제품 선택</span>
+                  </td>
+                  <td header="th-info" class="list-info">
+                    <div class="prod-img-box">
+                      <img src="./img/item/N202MJP920.png" alt="N202MJP920" />
+                    </div>
+                    <div class="prod-info-box">
+                      <a href="javascript:void();" class="name">내셔널지오그래픽 N202MJP920 카니스 홑겹 스탠카라 점퍼 CARBON BLACK</a>
+                      <span class="prod-size">SIZE<span class="size-num">95</span></span>
+                    </div>
+                  </td>
+                  <td header="th-quantity" class="list-quantity"><span class="quantity">1</span></td>
+                  <td header="th-total-price" class="list-total-price">
+                    <span class="cost on"><span class="cost-price">159,000</span>원</span><span class="total-price">139,000</span>원
+                  </td>
+                  <td header="th-delivery-fee" class="list-delivery-fee">
+                    <span class="delivery-fee">0</span><span class="small-notice">3만원 이상<br />무료배송</span>
+                  </td>
+                  <td id="th-delete">
+                    <a href="" class="delete"><i class="xi-close"></i></a>
+                  </td>
+                </tr>
+                <tr class="table-list view-prod">
+                  <td header="th-select" class="select-list">
+                    <label class="label-check">
+                      <input type="checkbox" class="ico-check" />
+                    </label>
+                    <span class="blind">제품 선택</span>
+                  </td>
+                  <td header="th-info" class="list-info">
+                    <div class="prod-img-box">
+                      <img src="./img/item/N192ACR310.png" alt="N192ACR310" />
+                    </div>
+                    <div class="prod-info-box">
+                      <a href="javascript:void();" class="name">내셔널지오그래픽 가방 N192ACR310 클리어 드라이백 10L 워터백 PINK</a>
+                      <span class="prod-size">SIZE<span class="size-num">95</span></span>
+                    </div>
+                  </td>
+                  <td header="th-quantity" class="list-quantity"><span class="quantity">1</span></td>
+                  <td header="th-total-price" class="list-total-price">
+                    <span class="cost"><span class="cost-price">35,000</span>원</span><span class="total-price">24,500</span>원
+                  </td>
+                  <td header="th-delivery-fee" class="list-delivery-fee">
+                    <span class="delivery-fee">0</span><span class="small-notice">3만원 이상<br />무료배송</span>
+                  </td>
+                  <td id="th-delete">
+                    <a href="" class="delete"><i class="xi-close"></i></a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- cart control : s -->
+          <div class="list-table-control">
+            <button type="button" class="mid btn-line delete">선택 상품 삭제</button>
+            <button type="button" class="mid btn-line add-zzim">WISH LIST 추가</button>
+            <button type="button" class="mid btn-line yellow order">견적서 출력</button>
+          </div>
+          <!-- cart control : e -->
+          <!-- cart amount : s -->
+          <div class="cart-amount">
+            <div class="list prod-amount">
+              <dl class="amount-total">
+                <dt class="tit">상품 금액</dt>
+                <dd class="result"><span class="num">301,500</span>원</dd>
+              </dl>
+            </div>
+            <div class="operator"><span class="minus"></span></div>
+            <div class="list prod-amount">
+              <dl class="amount-discount">
+                <dt class="tit">할인 금액</dt>
+                <dd class="result"><span class="num">20,000</span>원</dd>
+              </dl>
+            </div>
+            <div class="operator"><span class="plus"></span></div>
+            <div class="list prod-amount">
+              <dl class="amount-delivery">
+                <dt class="tit">배송비</dt>
+                <dd class="result"><span class="num">0</span>원</dd>
+              </dl>
+            </div>
+            <div class="operator"><span class="equal"></span></div>
+            <div class="list prod-amount total">
+              <dl class="amount-total">
+                <dt class="tit">결제 예정 금액</dt>
+                <dd class="result"><span class="num">271,500</span>원</dd>
+              </dl>
+            </div>
+          </div>
+          <!-- cart amount : e -->
+
+          <!-- layer pop 주문하기 : s -->
+          <button type="button" class="large btn"><span class="btn-name">주문하기 </span></button>
+          <!-- layer pop 주문하기 : e -->
+        </div>
+      </div>
       <!-- cart layer pop : e -->
     </header>
     <!-- header : e -->
@@ -271,7 +463,7 @@
                   구매 혜택 프로모션
                 </h2>
                 <p class="date">2020. 08. 18</p>
-                <a href="" class="mid btn"><span class="btn-name">BUY NOW</span></a>
+                <a href="" class="large btn"><span class="btn-name">BUY NOW</span></a>
               </div>
             </div>
             <img src="./img/event/banner01_summerwear.png" alt="SUMMER VACANCE" />
@@ -284,7 +476,7 @@
                   EARLY BIRDS
                 </h2>
                 <p class="date">2020. 07. 23 ~ 08. 31</p>
-                <a href="" class="mid btn"><span class="btn-name">BUY NOW</span></a>
+                <a href="" class="large btn"><span class="btn-name">BUY NOW</span></a>
               </div>
             </div>
             <img src="./img/event/banner02_kidsEarlybird.png" alt="20FW KIDS EARLY BIRDS" />
@@ -297,7 +489,7 @@
                   우리들의 청춘이야기
                 </h2>
                 <p class="date">#오버핏 반팔티</p>
-                <a href="" class="mid btn"><span class="btn-name">BUY NOW</span></a>
+                <a href="" class="large btn"><span class="btn-name">BUY NOW</span></a>
               </div>
             </div>
             <img src="./img/event/banner03_colorRecord.png" alt="오버핏 반팔티 기획전" />
