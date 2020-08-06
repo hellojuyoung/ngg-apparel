@@ -396,12 +396,13 @@ button {
   font-weight: 700;
 }
 
-.nav .tit {
+.nav.sub-box .tit {
   height: 85px;
   line-height: 85px;
   background-color: #333;
   color: #fff;
   padding: 0 55px;
+  margin-bottom: 0;
 }
 
 .nav .category li {
