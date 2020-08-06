@@ -38,10 +38,6 @@
           pause: 5000,
           speed: 500,
           pager: false,
-          //controls: true,
-          //onSliderLoad: function () {
-          //  //enter hover event
-          //},
         });
 
         //new product 제품 슬라이드
@@ -54,10 +50,6 @@
           pause: 5000,
           speed: 500,
           pager: false,
-          //controls: true,
-          //onSliderLoad: function () {
-          //  //enter hover event
-          //},
         });
       });
     </script>
@@ -75,17 +67,17 @@
         <div class="utilmenu">
           <ul>
             <li class="zzim">
-              <a href="javascript:voild();" onclick="document.querySelector('.layer-pop.zzim').classList.add('on');"><i class="xi-heart-o icon"></i></a>
+              <a href="#" onclick="document.querySelector('.layer-pop.zzim').classList.add('on');"><i class="xi-heart-o icon"></i></a>
             </li>
             <li class="cart">
-              <a href="javascript:void();" onclick="document.querySelector('.layer-pop.cart').classList.add('on');"><i class="xi-cart-o icon"></i><span class="ico-num">4</span></a>
+              <a href="#" onclick="document.querySelector('.layer-pop.cart').classList.add('on');"><i class="xi-cart-o icon"></i><span class="ico-num">4</span></a>
             </li>
           </ul>
         </div>
-        <div class="hamburger-wrap" style="display: none;">
-          <div class="hamburger"><i class="xi-bars"></i></div>
-          <div id="hamburger-nav">
-            <ul>
+        <div class="hamburger-wrap">
+          <div class="hamburger icon"><i class="xi-bars"></i></div>
+          <div class="hamburger-nav nav">
+            <ul class="category">
               <li><a href="">PROMOTION</a></li>
               <li><a href="">NEW ARRIVAL</a></li>
               <li><a href="">MAN</a></li>
@@ -105,7 +97,7 @@
 
       <!-- zzim layer pop : s -->
       <div class="layer-pop zzim">
-        <a href="javascript:void();" class="close" onclick="closeLayer();">
+        <a href="#" class="close" onclick="closeLayer();">
           <i class="xi-close"><span class="blind">닫기</span></i>
         </a>
         <div class="layer-wrap">
@@ -154,7 +146,7 @@
 
       <!-- cart layer pop : s -->
       <div class="layer-pop cart">
-        <a href="javascript:void();" class="close" onclick="closeLayer();">
+        <a href="#" class="close" onclick="closeLayer();">
           <i class="xi-close"><span class="blind">닫기</span></i>
         </a>
         <div class="layer-wrap">
@@ -206,7 +198,20 @@
                       <span class="prod-size">SIZE<span class="size-num">95</span></span>
                     </div>
                   </td>
-                  <td header="th-quantity" class="list-quantity"><span class="quantity">1</span></td>
+                  <td header="th-quantity" class="list-quantity">
+                    <div class="prod-quantity">
+                      <span class="blind">제품 수량</span>
+                      <button type="button" onclick="controlQuantity(-1, this);" class="btn-reduce">
+                        <img src="./img/common/btn_reduce.png" alt="감소" />
+                        수량 감소
+                      </button>
+                      <input type="text" name="quantity-num" class="quantity" readonly="readonly" value="1" />
+                      <button type="button" onclick="controlQuantity(1, this);" class="btn-rise">
+                        <img src="./img/common/btn_rise.png" alt="추가" />
+                        수량 추가
+                      </button>
+                    </div>
+                  </td>
                   <td header="th-total-price" class="list-total-price">
                     <span class="cost"><span class="cost-price">0</span>원</span><span class="total-price">59,000</span>원
                   </td>
@@ -233,7 +238,20 @@
                       <span class="prod-size">SIZE<span class="size-num">100</span></span>
                     </div>
                   </td>
-                  <td header="th-quantity" class="list-quantity"><span class="quantity">1</span></td>
+                  <td header="th-quantity" class="list-quantity">
+                    <div class="prod-quantity">
+                      <span class="blind">제품 수량</span>
+                      <button type="button" onclick="controlQuantity(-1, this);" class="btn-reduce">
+                        <img src="./img/common/btn_reduce.png" alt="감소" />
+                        수량 감소
+                      </button>
+                      <input type="text" name="quantity-num" class="quantity" readonly="readonly" value="1" />
+                      <button type="button" onclick="controlQuantity(1, this);" class="btn-rise">
+                        <img src="./img/common/btn_rise.png" alt="추가" />
+                        수량 추가
+                      </button>
+                    </div>
+                  </td>
                   <td header="th-total-price" class="list-total-price">
                     <span class="cost"><span class="cost-price">0</span>원</span><span class="total-price">59,000</span>원
                   </td>
@@ -260,7 +278,20 @@
                       <span class="prod-size">SIZE<span class="size-num">95</span></span>
                     </div>
                   </td>
-                  <td header="th-quantity" class="list-quantity"><span class="quantity">1</span></td>
+                  <td header="th-quantity" class="list-quantity">
+                    <div class="prod-quantity">
+                      <span class="blind">제품 수량</span>
+                      <button type="button" onclick="controlQuantity(-1, this);" class="btn-reduce">
+                        <img src="./img/common/btn_reduce.png" alt="감소" />
+                        수량 감소
+                      </button>
+                      <input type="text" name="quantity-num" class="quantity" readonly="readonly" value="1" />
+                      <button type="button" onclick="controlQuantity(1, this);" class="btn-rise">
+                        <img src="./img/common/btn_rise.png" alt="추가" />
+                        수량 추가
+                      </button>
+                    </div>
+                  </td>
                   <td header="th-total-price" class="list-total-price">
                     <span class="cost on"><span class="cost-price">159,000</span>원</span><span class="total-price">139,000</span>원
                   </td>
@@ -287,7 +318,20 @@
                       <span class="prod-size">SIZE<span class="size-num">95</span></span>
                     </div>
                   </td>
-                  <td header="th-quantity" class="list-quantity"><span class="quantity">1</span></td>
+                  <td header="th-quantity" class="list-quantity">
+                    <div class="prod-quantity">
+                      <span class="blind">제품 수량</span>
+                      <button type="button" onclick="controlQuantity(-1, this);" class="btn-reduce">
+                        <img src="./img/common/btn_reduce.png" alt="감소" />
+                        수량 감소
+                      </button>
+                      <input type="text" name="quantity-num" class="quantity" readonly="readonly" value="1" />
+                      <button type="button" onclick="controlQuantity(1, this);" class="btn-rise">
+                        <img src="./img/common/btn_rise.png" alt="추가" />
+                        수량 추가
+                      </button>
+                    </div>
+                  </td>
                   <td header="th-total-price" class="list-total-price">
                     <span class="cost"><span class="cost-price">35,000</span>원</span><span class="total-price">24,500</span>원
                   </td>
@@ -339,10 +383,9 @@
             </div>
           </div>
           <!-- cart amount : e -->
-
-          <!-- layer pop 주문하기 : s -->
-          <button type="button" class="large btn"><span class="btn-name">주문하기 </span></button>
-          <!-- layer pop 주문하기 : e -->
+          <!-- cart layer pop 주문하기 : s -->
+          <button type="button" class="large btn"><span class="btn-name">주문하기</span></button>
+          <!-- cart layer pop 주문하기 : e -->
         </div>
       </div>
       <!-- cart layer pop : e -->
@@ -387,7 +430,7 @@
       </div>
       <!-- small banner : e -->
       <!-- 내비게이션 : s -->
-      <nav class="sub-box">
+      <nav class="nav sub-box">
         <h2 class="tit">MENU</h2>
         <ul class="category">
           <li><a href="">PROMOTION</a></li>
@@ -1122,6 +1165,10 @@
     <!-- main : e -->
     <!-- footer : s -->
     <footer id="footer">
+      <div class="footer-ico-group">
+        <a href="#" class="fixed-btn scroll-top-btn">맨 위로 가기</a>
+        <a href="http://pf.kakao.com/_GQIxmC" class="fixed-btn kakao-profile" target="_blank">내셔널지오그래픽 카카오 프로필</a>
+      </div>
       <div class="footer-top-wrap cont-wrap">
         <div class="footer-inner">
           <div class="footer-group">
