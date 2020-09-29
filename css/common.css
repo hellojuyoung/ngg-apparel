@@ -723,7 +723,7 @@ section .cont-wrap {
 .prod-list .prod-thumb-wrap .prod-thumb {
   flex: none;
   position: relative;
-  width: 345px;
+  width: 30%;
   height: 410px;
   padding: 15px;
   margin-right: 40px;

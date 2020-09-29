@@ -17,18 +17,15 @@ $(window).scroll(function () {
     $("#header").removeClass("scroll");
     $(".footer-ico-group").removeClass("scroll");
   }
+});
 
-  //scrollTop
-  $(".scroll-top-btn").click(function () {
-    $("html, body").animate(
-      {
-        scrollTop: 0,
-      },
-      500
-    );
-
-    return false;
-  });
+//scrollTop
+$(".scroll-top-btn").click(function () {
+  $("html, body").animate({
+      scrollTop: 0,
+    },
+    500
+  );
 });
 
 //layer pop close

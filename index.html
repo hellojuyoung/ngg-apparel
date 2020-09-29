@@ -1,1236 +1,1255 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-    <title>내셔널지오그래픽 어패럴</title>
 
-    <!-- favicon -->
-    <link rel="icon" href="favicon.png" />
-    <!-- XEICON -->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css" />
-    <!-- bxslider css-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css" />
-    <link rel="stylesheet" href="./css/main.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+  <title>내셔널지오그래픽 어패럴</title>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <!-- bxslider js -->
-    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
-    <script src="./js/default.js"></script>
+  <!-- favicon -->
+  <link rel="icon" href="favicon.png" />
+  <!-- XEICON -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css" />
+  <!-- bxslider css-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css" />
+  <link rel="stylesheet" href="./css/main.css" />
 
-    <script>
-      $(document).ready(function () {
-        //main top banner 슬라이드
-        $(".top-banner-group").bxSlider({
-          auto: true,
-          pause: 7000,
-        });
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
-        //top product, sale product 제품 슬라이드
-        $(".single-spacing").bxSlider({
-          minSlides: 3,
-          maxSlides: 3,
-          moveSlides: 1,
-          slideWidth: 345,
-          slideMargin: 40,
-          infiniteLoop: true,
-          auto: true,
-          pause: 5000,
-          speed: 500,
-          pager: false,
-        });
+</head>
 
-        //new product 제품 슬라이드
-        $(".double-spacing").bxSlider({
-          minSlides: 1,
-          maxSlides: 1,
-          moveSlides: 1,
-          infiniteLoop: true,
-          auto: true,
-          pause: 5000,
-          speed: 500,
-          pager: false,
-        });
-      });
-    </script>
-  </head>
-
-  <body>
-    <!-- header : s -->
-    <header id="header">
-      <div class="header-wrap">
-        <div class="header-logo">
-          <h1 class="national-geographic">
-            <a href="index.html"><img src="./img/common/bi.png" alt="내셔널지오그래픽 어패럴" /></a>
-          </h1>
-        </div>
-        <div class="utilmenu">
-          <ul>
-            <li class="zzim">
-              <a href="#" onclick="document.querySelector('.layer-pop.zzim').classList.add('on');"><i class="xi-heart-o icon"></i></a>
-            </li>
-            <li class="cart">
-              <a href="#" onclick="document.querySelector('.layer-pop.cart').classList.add('on');"><i class="xi-cart-o icon"></i><span class="ico-num">4</span></a>
-            </li>
-          </ul>
-        </div>
-        <div class="hamburger-wrap">
-          <div class="hamburger icon"><i class="xi-bars"></i></div>
-          <div class="hamburger-nav nav">
-            <ul class="category">
-              <li><a href="">PROMOTION</a></li>
-              <li><a href="">NEW ARRIVAL</a></li>
-              <li><a href="">MAN</a></li>
-              <li><a href="">WOMAN</a></li>
-              <li><a href="">KIDS</a></li>
-              <li><a href="">BAG</a></li>
-              <li><a href="">HEAD WEAR</a></li>
-              <li><a href="">FOOT WEAR</a></li>
-              <li><a href="">SKIN CARE</a></li>
-              <li><a href="">SUITCASE</a></li>
-              <li><a href="">CAMPING</a></li>
-              <li><a href="">SURF WEAR</a></li>
-            </ul>
-          </div>
-        </div>
+<body>
+  <!-- header : s -->
+  <header id="header">
+    <div class="header-wrap">
+      <div class="header-logo">
+        <h1 class="national-geographic">
+          <a href="index.html"><img src="./img/common/bi.png" alt="내셔널지오그래픽 어패럴" /></a>
+        </h1>
       </div>
-
-      <!-- zzim layer pop : s -->
-      <div class="layer-pop zzim">
-        <a href="#" class="close" onclick="closeLayer();">
-          <i class="xi-close"><span class="blind">닫기</span></i>
-        </a>
-        <div class="layer-wrap">
-          <div class="cont-top">
-            <h2 class="tit">WISH LIST</h2>
-          </div>
-          <div class="view-zzim">
-            <table class="list-table">
-              <caption class="blind">
-                위시리스트 제목
-              </caption>
-              <colgroup>
-                <col style="width: 30px;" />
-                <col style="width: auto;" />
-              </colgroup>
-              <thead>
-                <tr class="table-head">
-                  <td id="th-select">
-                    <label class="label-check all-select">
-                      <input type="checkbox" name="allCheck" class="ico-check" />
-                    </label>
-                    <span class="blind">전체 선택</span>
-                  </td>
-                  <td id="th-info">상품/옵션 정보</td>
-                  <td id="th-delete" class="blind">리스트 삭제</td>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="table-list view-prod no-list">
-                  <td colspan="2">
-                    <span class="notice">WISH LIST에 담긴 상품이 없습니다.</span>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <!-- cart control : s -->
-          <div class="list-table-control">
-            <button type="button" class="mid btn-line delete">선택 상품 삭제</button>
-            <button type="button" class="mid btn-line add-cart">쇼핑 리스트 추가</button>
-          </div>
-          <!-- cart control : e -->
-        </div>
-      </div>
-      <!-- zzim layer pop : e -->
-
-      <!-- cart layer pop : s -->
-      <div class="layer-pop cart">
-        <a href="#" class="close" onclick="closeLayer();">
-          <i class="xi-close"><span class="blind">닫기</span></i>
-        </a>
-        <div class="layer-wrap">
-          <div class="cont-top">
-            <h2 class="tit">SHOPPING LIST</h2>
-          </div>
-          <div class="view-cart">
-            <table class="list-table">
-              <caption class="blind">
-                쇼핑리스트 제목
-              </caption>
-              <colgroup>
-                <col style="width: 30px;" />
-                <col style="width: 45%;" />
-                <col style="width: 10%;" />
-                <col style="width: 20%;" />
-                <col style="width: 10%;" />
-                <col style="width: auto;" />
-              </colgroup>
-              <thead>
-                <tr class="table-head">
-                  <td id="th-select">
-                    <label class="label-check all-select">
-                      <input type="checkbox" name="allCheck" class="ico-check" />
-                    </label>
-                    <span class="blind">전체 선택</span>
-                  </td>
-                  <td id="th-info">상품/옵션 정보</td>
-                  <td id="th-quantity">수량</td>
-                  <td id="th-total-price">상품금액</td>
-                  <td id="th-delivery-fee">배송비</td>
-                  <td id="th-delete" class="blind">리스트 삭제</td>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="table-list view-prod">
-                  <td header="th-select" class="select-list">
-                    <label class="label-check">
-                      <input type="checkbox" class="ico-check" />
-                    </label>
-                    <span class="blind">제품 선택</span>
-                  </td>
-                  <td header="th-info" class="list-info">
-                    <div class="prod-img-box">
-                      <img src="./img/item/N202UTS510.png" alt="N202UTS510" />
-                    </div>
-                    <div class="prod-info-box">
-                      <a href="javascript:void();" class="name">내셔널지오그래픽 N202UTS510 핫 썸머 컨셉 티셔츠 1 ORANGE</a>
-                      <span class="prod-size">SIZE<span class="size-num">95</span></span>
-                    </div>
-                  </td>
-                  <td header="th-quantity" class="list-quantity">
-                    <div class="prod-quantity">
-                      <span class="blind">제품 수량</span>
-                      <button type="button" onclick="controlQuantity(-1, this);" class="btn-reduce">
-                        <img src="./img/common/btn_reduce.png" alt="감소" />
-                        수량 감소
-                      </button>
-                      <input type="text" name="quantity-num" class="quantity" readonly="readonly" value="1" />
-                      <button type="button" onclick="controlQuantity(1, this);" class="btn-rise">
-                        <img src="./img/common/btn_rise.png" alt="추가" />
-                        수량 추가
-                      </button>
-                    </div>
-                  </td>
-                  <td header="th-total-price" class="list-total-price">
-                    <span class="cost"><span class="cost-price">0</span>원</span><span class="total-price">59,000</span>원
-                  </td>
-                  <td header="th-delivery-fee" class="list-delivery-fee">
-                    <span class="delivery-fee">0</span><span class="small-notice">3만원 이상<br />무료배송</span>
-                  </td>
-                  <td id="th-delete">
-                    <a href="" class="delete"><i class="xi-close"></i></a>
-                  </td>
-                </tr>
-                <tr class="table-list view-prod">
-                  <td header="th-select" class="select-list">
-                    <label class="label-check">
-                      <input type="checkbox" class="ico-check" />
-                    </label>
-                    <span class="blind">제품 선택</span>
-                  </td>
-                  <td header="th-info" class="list-info">
-                    <div class="prod-img-box">
-                      <img src="./img/item/N202MBS610.png" alt="N202UTS510" />
-                    </div>
-                    <div class="prod-info-box">
-                      <a href="javascript:void();" class="name">내셔널지오그래픽 N202MBS610 남성 4부 립스탑 조직 보드숏 CARBON BLACK</a>
-                      <span class="prod-size">SIZE<span class="size-num">100</span></span>
-                    </div>
-                  </td>
-                  <td header="th-quantity" class="list-quantity">
-                    <div class="prod-quantity">
-                      <span class="blind">제품 수량</span>
-                      <button type="button" onclick="controlQuantity(-1, this);" class="btn-reduce">
-                        <img src="./img/common/btn_reduce.png" alt="감소" />
-                        수량 감소
-                      </button>
-                      <input type="text" name="quantity-num" class="quantity" readonly="readonly" value="1" />
-                      <button type="button" onclick="controlQuantity(1, this);" class="btn-rise">
-                        <img src="./img/common/btn_rise.png" alt="추가" />
-                        수량 추가
-                      </button>
-                    </div>
-                  </td>
-                  <td header="th-total-price" class="list-total-price">
-                    <span class="cost"><span class="cost-price">0</span>원</span><span class="total-price">59,000</span>원
-                  </td>
-                  <td header="th-delivery-fee" class="list-delivery-fee">
-                    <span class="delivery-fee">0</span><span class="small-notice">3만원 이상<br />무료배송</span>
-                  </td>
-                  <td id="th-delete">
-                    <a href="" class="delete"><i class="xi-close"></i></a>
-                  </td>
-                </tr>
-                <tr class="table-list view-prod">
-                  <td header="th-select" class="select-list">
-                    <label class="label-check">
-                      <input type="checkbox" class="ico-check" />
-                    </label>
-                    <span class="blind">제품 선택</span>
-                  </td>
-                  <td header="th-info" class="list-info">
-                    <div class="prod-img-box">
-                      <img src="./img/item/N202MJP920.png" alt="N202MJP920" />
-                    </div>
-                    <div class="prod-info-box">
-                      <a href="javascript:void();" class="name">내셔널지오그래픽 N202MJP920 카니스 홑겹 스탠카라 점퍼 CARBON BLACK</a>
-                      <span class="prod-size">SIZE<span class="size-num">95</span></span>
-                    </div>
-                  </td>
-                  <td header="th-quantity" class="list-quantity">
-                    <div class="prod-quantity">
-                      <span class="blind">제품 수량</span>
-                      <button type="button" onclick="controlQuantity(-1, this);" class="btn-reduce">
-                        <img src="./img/common/btn_reduce.png" alt="감소" />
-                        수량 감소
-                      </button>
-                      <input type="text" name="quantity-num" class="quantity" readonly="readonly" value="1" />
-                      <button type="button" onclick="controlQuantity(1, this);" class="btn-rise">
-                        <img src="./img/common/btn_rise.png" alt="추가" />
-                        수량 추가
-                      </button>
-                    </div>
-                  </td>
-                  <td header="th-total-price" class="list-total-price">
-                    <span class="cost on"><span class="cost-price">159,000</span>원</span><span class="total-price">139,000</span>원
-                  </td>
-                  <td header="th-delivery-fee" class="list-delivery-fee">
-                    <span class="delivery-fee">0</span><span class="small-notice">3만원 이상<br />무료배송</span>
-                  </td>
-                  <td id="th-delete">
-                    <a href="" class="delete"><i class="xi-close"></i></a>
-                  </td>
-                </tr>
-                <tr class="table-list view-prod">
-                  <td header="th-select" class="select-list">
-                    <label class="label-check">
-                      <input type="checkbox" class="ico-check" />
-                    </label>
-                    <span class="blind">제품 선택</span>
-                  </td>
-                  <td header="th-info" class="list-info">
-                    <div class="prod-img-box">
-                      <img src="./img/item/N192ACR310.png" alt="N192ACR310" />
-                    </div>
-                    <div class="prod-info-box">
-                      <a href="javascript:void();" class="name">내셔널지오그래픽 가방 N192ACR310 클리어 드라이백 10L 워터백 PINK</a>
-                      <span class="prod-size">SIZE<span class="size-num">95</span></span>
-                    </div>
-                  </td>
-                  <td header="th-quantity" class="list-quantity">
-                    <div class="prod-quantity">
-                      <span class="blind">제품 수량</span>
-                      <button type="button" onclick="controlQuantity(-1, this);" class="btn-reduce">
-                        <img src="./img/common/btn_reduce.png" alt="감소" />
-                        수량 감소
-                      </button>
-                      <input type="text" name="quantity-num" class="quantity" readonly="readonly" value="1" />
-                      <button type="button" onclick="controlQuantity(1, this);" class="btn-rise">
-                        <img src="./img/common/btn_rise.png" alt="추가" />
-                        수량 추가
-                      </button>
-                    </div>
-                  </td>
-                  <td header="th-total-price" class="list-total-price">
-                    <span class="cost"><span class="cost-price">35,000</span>원</span><span class="total-price">24,500</span>원
-                  </td>
-                  <td header="th-delivery-fee" class="list-delivery-fee">
-                    <span class="delivery-fee">0</span><span class="small-notice">3만원 이상<br />무료배송</span>
-                  </td>
-                  <td id="th-delete">
-                    <a href="" class="delete"><i class="xi-close"></i></a>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <!-- cart control : s -->
-          <div class="list-table-control">
-            <button type="button" class="mid btn-line delete">선택 상품 삭제</button>
-            <button type="button" class="mid btn-line add-zzim">WISH LIST 추가</button>
-            <button type="button" class="mid btn-line yellow order">견적서 출력</button>
-          </div>
-          <!-- cart control : e -->
-          <!-- cart amount : s -->
-          <div class="cart-amount">
-            <div class="list prod-amount">
-              <dl class="amount-total">
-                <dt class="tit">상품 금액</dt>
-                <dd class="result"><span class="num">301,500</span>원</dd>
-              </dl>
-            </div>
-            <div class="operator"><span class="minus"></span></div>
-            <div class="list prod-amount">
-              <dl class="amount-discount">
-                <dt class="tit">할인 금액</dt>
-                <dd class="result"><span class="num">20,000</span>원</dd>
-              </dl>
-            </div>
-            <div class="operator"><span class="plus"></span></div>
-            <div class="list prod-amount">
-              <dl class="amount-delivery">
-                <dt class="tit">배송비</dt>
-                <dd class="result"><span class="num">0</span>원</dd>
-              </dl>
-            </div>
-            <div class="operator"><span class="equal"></span></div>
-            <div class="list prod-amount total">
-              <dl class="amount-total">
-                <dt class="tit">결제 예정 금액</dt>
-                <dd class="result"><span class="num">271,500</span>원</dd>
-              </dl>
-            </div>
-          </div>
-          <!-- cart amount : e -->
-          <!-- cart layer pop 주문하기 : s -->
-          <button type="button" class="large btn"><span class="btn-name">주문하기</span></button>
-          <!-- cart layer pop 주문하기 : e -->
-        </div>
-      </div>
-      <!-- cart layer pop : e -->
-    </header>
-    <!-- header : e -->
-    <!-- sub : s -->
-    <div id="sub" class="sub-main">
-      <!-- search : s -->
-      <div class="search-area sub-box">
+      <div class="utilmenu">
         <ul>
-          <li class="sub-btn">
-            <a href="">STORE</a>
-            <a href="">CS CENTER</a>
+          <li class="zzim">
+            <a href="#" onclick="document.querySelector('.layer-pop.zzim').classList.add('on');">
+              <i class="xi-heart-o icon"></i>
+              <span class="ico-num blind">4</span>
+            </a>
           </li>
-          <li class="status">
-            <div class="profile-grade">
-              <span class="guest on">GUEST</span>
-              <span class="member">MEMBER</span>
-            </div>
-            <div class="profile-info">
-              <p class="guest-message on">회원 가입하시는 모든 분들께<br /><span class="bold">5000P</span>를 드립니다.</p>
-              <p class="member-message"><span class="user-name">내셔널지오그래픽</span>님<br />환영합니다.</p>
-            </div>
-          </li>
-          <li class="sub-btn bottom">
-            <a href="">LOG IN</a>
-            <a href="">JOIN</a>
-          </li>
-          <li class="search-wrap">
-            <form action="/search">
-              <input type="text" placeholder="SEARCH" />
-              <input type="image" src="./img/common/search_btn.png" alt="검색" class="search-btn" />
-            </form>
+          <li class="cart">
+            <a href="#" onclick="document.querySelector('.layer-pop.cart').classList.add('on');">
+              <i class="xi-cart-o icon"></i>
+              <span class="ico-num">4</span>
+            </a>
           </li>
         </ul>
       </div>
-      <!-- search : e -->
-      <!-- small banner : s -->
-      <div class="top-aside-banner sub-box">
-        <p>FREE한<br />LUCKY<br />SUMMER</p>
-        <span class="date">2020. 07. 30 ~ 08. 07</span>
-      </div>
-      <!-- small banner : e -->
-      <!-- 내비게이션 : s -->
-      <nav class="nav sub-box">
-        <h2 class="tit">MENU</h2>
-        <ul class="category">
-          <li><a href="">PROMOTION</a></li>
-          <li><a href="">NEW ARRIVAL</a></li>
-          <li><a href="">MAN</a></li>
-          <li><a href="">WOMAN</a></li>
-          <li><a href="">KIDS</a></li>
-          <li><a href="">BAG</a></li>
-          <li><a href="">HEAD WEAR</a></li>
-          <li><a href="">FOOT WEAR</a></li>
-          <li><a href="">SKIN CARE</a></li>
-          <li><a href="">SUITCASE</a></li>
-          <li><a href="">CAMPING</a></li>
-          <li><a href="">SURF WEAR</a></li>
-        </ul>
-      </nav>
-      <!-- 내비게이션 : e -->
-      <div class="mid-aside-banner sub-box">
-        <img src="./img/event/subBanner_divecloud.png" alt="dive cloud 슬리퍼 & 샌들 기획전" />
-      </div>
-      <!-- 태그 위젯 : s -->
-      <div class="tag-widget-wrap sub-box">
-        <h2 class="tit">Tags Widget</h2>
-        <div class="tag-group">
-          <span class="tag"><a href="">Swim Wear</a></span>
-          <span class="tag"><a href="">Women</a></span>
-          <span class="tag"><a href="">Men</a></span>
-          <span class="tag"><a href="">Equipment</a></span>
-          <span class="tag"><a href="">Apparel</a></span>
-          <span class="tag"><a href="">Best</a></span>
-          <span class="tag"><a href="">Hiking</a></span>
-          <span class="tag"><a href="">Theme</a></span>
-          <span class="tag"><a href="">Super</a></span>
-          <span class="tag"><a href="">Duper</a></span>
-          <span class="tag"><a href="">Accessories</a></span>
-          <span class="tag"><a href="">Responsive</a></span>
-        </div>
-        <span class="page-view-btn"><a href="">view all tags</a></span>
-      </div>
-      <!-- 태그 위젯 : e -->
-      <!-- Look book : s -->
-      <div class="lookbook-wrap sub-box">
-        <h2 class="tit">Articles Experts</h2>
-        <div class="article-group">
-          <ul>
-            <li><a href="">옷깃을 세워야 할 시간</a></li>
-            <li><a href="">내셔널지오그래픽을 입는다는 것</a></li>
-            <li><a href="">넘실거리는 물 위에서</a></li>
-            <li><a href="">도심 속 작은 숲을 거닐다</a></li>
-            <li><a href="">2020 HOT SUMMER COLLECTION</a></li>
-            <li><a href="">뜨거운 여름의 빛나는 조연</a></li>
-            <li><a href="">AROUND CAMPING</a></li>
-            <li>
-              <a href="">랜선 힐링을 선사하는 <tvN 삼시세끼-어촌편5>속 내셔널지오그래픽 아이템</tvN></a>
-            </li>
+      <div class="hamburger-wrap">
+        <div class="hamburger icon"><i class="xi-bars"></i></div>
+        <div class="hamburger-nav nav">
+          <ul class="category">
+            <li><a href="#">PROMOTION</a></li>
+            <li><a href="#">NEW ARRIVAL</a></li>
+            <li><a href="#">MAN</a></li>
+            <li><a href="#">WOMAN</a></li>
+            <li><a href="#">KIDS</a></li>
+            <li><a href="#">BAG</a></li>
+            <li><a href="#">HEAD WEAR</a></li>
+            <li><a href="#">FOOT WEAR</a></li>
+            <li><a href="#">SKIN CARE</a></li>
+            <li><a href="#">SUITCASE</a></li>
+            <li><a href="#">CAMPING</a></li>
+            <li><a href="#">SURF WEAR</a></li>
           </ul>
         </div>
-        <span class="page-view-btn"><a href="">view all</a></span>
       </div>
-      <!-- Look book : e -->
     </div>
-    <!-- sub : e -->
-    <!-- main : s -->
-    <section id="main">
-      <!-- top banner : s -->
-      <div class="top-banner-wrap">
-        <ul class="top-banner-group">
-          <li class="banner">
-            <div class="cont-wrap">
-              <div class="banner-txt-wrap">
-                <h2 class="tit">
-                  SUMMER VACANCE<br />
-                  구매 혜택 프로모션
-                </h2>
-                <p class="date">2020. 08. 18</p>
-                <a href="" class="large btn"><span class="btn-name">BUY NOW</span></a>
-              </div>
-            </div>
-            <img src="./img/event/banner01_summerwear.png" alt="SUMMER VACANCE" />
-          </li>
-          <li class="banner">
-            <div class="cont-wrap">
-              <div class="banner-txt-wrap">
-                <h2 class="tit">
-                  20FW KIDS<br />
-                  EARLY BIRDS
-                </h2>
-                <p class="date">2020. 07. 23 ~ 08. 31</p>
-                <a href="" class="large btn"><span class="btn-name">BUY NOW</span></a>
-              </div>
-            </div>
-            <img src="./img/event/banner02_kidsEarlybird.png" alt="20FW KIDS EARLY BIRDS" />
-          </li>
-          <li class="banner">
-            <div class="cont-wrap">
-              <div class="banner-txt-wrap">
-                <h2 class="tit">
-                  컬러로 기록하는<br />
-                  우리들의 청춘이야기
-                </h2>
-                <p class="date">#오버핏 반팔티</p>
-                <a href="" class="large btn"><span class="btn-name">BUY NOW</span></a>
-              </div>
-            </div>
-            <img src="./img/event/banner03_colorRecord.png" alt="오버핏 반팔티 기획전" />
-          </li>
-        </ul>
-      </div>
-      <!-- top banner : e -->
 
-      <div class="cont-wrap">
-        <!-- new products : s -->
-        <article class="new-prod-area prod-list">
-          <div class="cont-top">
-            <h3 class="tit">NEW PRODUCTS</h3>
-          </div>
-          <!-- new prod group : s -->
-          <div class="prod-thumb-wrap">
-            <ul class="double-spacing">
-              <li class="thumb-line-wrap">
-                <ul>
-                  <li class="prod-thumb">
-                    <a href="">
-                      <div class="badge-wrap">
-                        <span class="badge new on">NEW</span>
-                        <span class="badge hot">HOT</span>
-                      </div>
-                      <div class="prod-img">
-                        <img src="./img/item/N202UTS550.png" alt="N202UTS550" />
-                      </div>
-                      <div class="prod-info">
-                        <h4 class="item-name">내셔널지오그래픽 N202UTS550 핫 썸머 컨셉 티셔츠 6 WHITE</h4>
-                        <div class="item-price">
-                          <span class="cost blind">59,000<span class="price-unit">원</span> </span>
-                          <span class="discount">59,000<span class="price-unit">원</span> </span>
-                        </div>
-                      </div>
-                    </a>
-                    <div class="thumb-layer">
-                      <div class="thumb-icon">
-                        <a href=""> <i class="xi-heart-o"></i><span>찜하기</span> </a>
-                      </div>
-                      <div class="thumb-icon">
-                        <a href=""> <i class="xi-cart-o"></i><span>장바구니</span> </a>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="prod-thumb">
-                    <a href="">
-                      <div class="badge-wrap">
-                        <span class="badge new">NEW</span>
-                        <span class="badge hot on">HOT</span>
-                      </div>
-                      <div class="prod-img">
-                        <img src="./img/item/N202UTS530.png" alt="N202UTS530" />
-                      </div>
-                      <div class="prod-info">
-                        <h4 class="item-name">내셔널지오그래픽 N202UTS530 핫 썸머 컨셉 티셔츠 3 CARBON BLACK</h4>
-                        <div class="item-price">
-                          <span class="cost blind">59,000<span class="price-unit">원</span> </span>
-                          <span class="discount">59,000<span class="price-unit">원</span> </span>
-                        </div>
-                      </div>
-                    </a>
-                    <div class="thumb-layer">
-                      <div class="thumb-icon">
-                        <a href=""> <i class="xi-heart-o"></i><span>찜하기</span> </a>
-                      </div>
-                      <div class="thumb-icon">
-                        <a href=""> <i class="xi-cart-o"></i><span>장바구니</span> </a>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="prod-thumb">
-                    <a href="">
-                      <div class="badge-wrap">
-                        <span class="badge new">NEW</span>
-                        <span class="badge hot">HOT</span>
-                      </div>
-                      <div class="prod-img">
-                        <img src="./img/item/N195AFW010.png" alt="N195AFW010" />
-                      </div>
-                      <div class="prod-info">
-                        <h4 class="item-name">내셔널지오그래픽 신발 N195AFW010 다이브 플러스 슬리퍼 YELLOW</h4>
-                        <div class="item-price">
-                          <span class="cost blind">39,000<span class="price-unit">원</span> </span>
-                          <span class="discount">39,000<span class="price-unit">원</span> </span>
-                        </div>
-                      </div>
-                    </a>
-                    <div class="thumb-layer">
-                      <div class="thumb-icon">
-                        <a href=""> <i class="xi-heart-o"></i><span>찜하기</span> </a>
-                      </div>
-                      <div class="thumb-icon">
-                        <a href=""> <i class="xi-cart-o"></i><span>장바구니</span> </a>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="prod-thumb">
-                    <a href="">
-                      <div class="badge-wrap">
-                        <span class="badge new">NEW</span>
-                        <span class="badge hot">HOT</span>
-                      </div>
-                      <div class="prod-img">
-                        <img src="./img/item/N205AGL010.png" alt="N205AGL010" />
-                      </div>
-                      <div class="prod-info">
-                        <h4 class="item-name">내셔널지오그래픽 ACC N205AGL010 아이스 슬리브 쿨토시 팔토시</h4>
-                        <div class="item-price">
-                          <span class="cost blind">19,000<span class="price-unit">원</span> </span>
-                          <span class="discount">19,000<span class="price-unit">원</span> </span>
-                        </div>
-                      </div>
-                    </a>
-                    <div class="thumb-layer">
-                      <div class="thumb-icon">
-                        <a href=""> <i class="xi-heart-o"></i><span>찜하기</span> </a>
-                      </div>
-                      <div class="thumb-icon">
-                        <a href=""> <i class="xi-cart-o"></i><span>장바구니</span> </a>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="prod-thumb">
-                    <a href="">
-                      <div class="badge-wrap">
-                        <span class="badge new">NEW</span>
-                        <span class="badge hot">HOT</span>
-                      </div>
-                      <div class="prod-img">
-                        <img src="./img/item/N202MBS610.png" alt="N202MBS610" />
-                      </div>
-                      <div class="prod-info">
-                        <h4 class="item-name">내셔널지오그래픽 N202MBS610 남성 4부 립스탑 조직 보드숏 CARBON BLACK</h4>
-                        <div class="item-price">
-                          <span class="cost blind">59,000<span class="price-unit">원</span> </span>
-                          <span class="discount">59,000<span class="price-unit">원</span> </span>
-                        </div>
-                      </div>
-                    </a>
-                    <div class="thumb-layer">
-                      <div class="thumb-icon">
-                        <a href=""> <i class="xi-heart-o"></i><span>찜하기</span> </a>
-                      </div>
-                      <div class="thumb-icon">
-                        <a href=""> <i class="xi-cart-o"></i><span>장바구니</span> </a>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="prod-thumb">
-                    <a href="">
-                      <div class="badge-wrap">
-                        <span class="badge new">NEW</span>
-                        <span class="badge hot">HOT</span>
-                      </div>
-                      <div class="prod-img">
-                        <img src="./img/item/N185AFW040.png" alt="N185AFW040" />
-                      </div>
-                      <div class="prod-info">
-                        <h4 class="item-name">내셔널지오그래픽 신발 N185AFW040 ZURIPPER 주리퍼 샌들 ORANGE</h4>
-                        <div class="item-price">
-                          <span class="cost">59,000<span class="price-unit">원</span> </span>
-                          <span class="discount">29,000<span class="price-unit">원</span> </span>
-                        </div>
-                      </div>
-                    </a>
-                    <div class="thumb-layer">
-                      <div class="thumb-icon">
-                        <a href=""> <i class="xi-heart-o"></i><span>찜하기</span> </a>
-                      </div>
-                      <div class="thumb-icon">
-                        <a href=""> <i class="xi-cart-o"></i><span>장바구니</span> </a>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </li>
-              <li class="thumb-line-wrap">
-                <ul>
-                  <li class="prod-thumb">
-                    <a href="">
-                      <div class="badge-wrap">
-                        <span class="badge new on">NEW</span>
-                        <span class="badge hot">HOT</span>
-                      </div>
-                      <div class="prod-img">
-                        <img src="./img/item/N202UTS510.png" alt="N202UTS510" />
-                      </div>
-                      <div class="prod-info">
-                        <h4 class="item-name">내셔널지오그래픽 N202UTS510 핫 썸머 컨셉 티셔츠 1 ORANGE</h4>
-                        <div class="item-price">
-                          <span class="cost blind">59,000<span class="price-unit">원</span> </span>
-                          <span class="discount">59,000<span class="price-unit">원</span> </span>
-                        </div>
-                      </div>
-                    </a>
-                    <div class="thumb-layer">
-                      <div class="thumb-icon">
-                        <a href=""> <i class="xi-heart-o"></i><span>찜하기</span> </a>
-                      </div>
-                      <div class="thumb-icon">
-                        <a href=""> <i class="xi-cart-o"></i><span>장바구니</span> </a>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="prod-thumb">
-                    <a href="">
-                      <div class="badge-wrap">
-                        <span class="badge new">NEW</span>
-                        <span class="badge hot on">HOT</span>
-                      </div>
-                      <div class="prod-img">
-                        <img src="./img/item/N202UBS640.png" alt="N202UBS640" />
-                      </div>
-                      <div class="prod-info">
-                        <h4 class="item-name">내셔널지오그래픽 N202UBS640 유니 컬러 베이직 보드숏 BEIGE</h4>
-                        <div class="item-price">
-                          <span class="cost blind">59,000<span class="price-unit">원</span> </span>
-                          <span class="discount">59,000<span class="price-unit">원</span> </span>
-                        </div>
-                      </div>
-                    </a>
-                    <div class="thumb-layer">
-                      <div class="thumb-icon">
-                        <a href=""> <i class="xi-heart-o"></i><span>찜하기</span> </a>
-                      </div>
-                      <div class="thumb-icon">
-                        <a href=""> <i class="xi-cart-o"></i><span>장바구니</span> </a>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="prod-thumb">
-                    <a href="">
-                      <div class="badge-wrap">
-                        <span class="badge new">NEW</span>
-                        <span class="badge hot">HOT</span>
-                      </div>
-                      <div class="prod-img">
-                        <img src="./img/item/N205UHA060.png" alt="N205UHA060" />
-                      </div>
-                      <div class="prod-info">
-                        <h4 class="item-name">내셔널지오그래픽 모자 N205UHA060 플렉시블볼캡 WHITE</h4>
-                        <div class="item-price">
-                          <span class="cost blind">46,000<span class="price-unit">원</span> </span>
-                          <span class="discount">46,000<span class="price-unit">원</span> </span>
-                        </div>
-                      </div>
-                    </a>
-                    <div class="thumb-layer">
-                      <div class="thumb-icon">
-                        <a href=""> <i class="xi-heart-o"></i><span>찜하기</span> </a>
-                      </div>
-                      <div class="thumb-icon">
-                        <a href=""> <i class="xi-cart-o"></i><span>장바구니</span> </a>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="prod-thumb">
-                    <a href="">
-                      <div class="badge-wrap">
-                        <span class="badge new">NEW</span>
-                        <span class="badge hot">HOT</span>
-                      </div>
-                      <div class="prod-img">
-                        <img src="./img/item/N192ACR310.png" alt="N192ACR310" />
-                      </div>
-                      <div class="prod-info">
-                        <h4 class="item-name">내셔널지오그래픽 가방 N192ACR310 클리어 드라이백 10L 워터백 PINK</h4>
-                        <div class="item-price">
-                          <span class="cost">35,000<span class="price-unit">원</span> </span>
-                          <span class="discount">24,500<span class="price-unit">원</span> </span>
-                        </div>
-                      </div>
-                    </a>
-                    <div class="thumb-layer">
-                      <div class="thumb-icon">
-                        <a href=""> <i class="xi-heart-o"></i><span>찜하기</span> </a>
-                      </div>
-                      <div class="thumb-icon">
-                        <a href=""> <i class="xi-cart-o"></i><span>장바구니</span> </a>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="prod-thumb">
-                    <a href="">
-                      <div class="badge-wrap">
-                        <span class="badge new">NEW</span>
-                        <span class="badge hot">HOT</span>
-                      </div>
-                      <div class="prod-img">
-                        <img src="./img/item/N202UTS520.png" alt="N202UTS520" />
-                      </div>
-                      <div class="prod-info">
-                        <h4 class="item-name">내셔널지오그래픽 N202UTS520 핫 썸머 컨셉 티셔츠 2 PEONY PINK</h4>
-                        <div class="item-price">
-                          <span class="cost blind">59,000<span class="price-unit">원</span> </span>
-                          <span class="discount">59,000<span class="price-unit">원</span> </span>
-                        </div>
-                      </div>
-                    </a>
-                    <div class="thumb-layer">
-                      <div class="thumb-icon">
-                        <a href=""> <i class="xi-heart-o"></i><span>찜하기</span> </a>
-                      </div>
-                      <div class="thumb-icon">
-                        <a href=""> <i class="xi-cart-o"></i><span>장바구니</span> </a>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="prod-thumb">
-                    <a href="">
-                      <div class="badge-wrap">
-                        <span class="badge new">NEW</span>
-                        <span class="badge hot">HOT</span>
-                      </div>
-                      <div class="prod-img">
-                        <img src="./img/item/N185AFW030.png" alt="N185AFW030" />
-                      </div>
-                      <div class="prod-info">
-                        <h4 class="item-name">내셔널지오그래픽 신발 N185AFW030 QW-CLIP D 샌들 KHAKI</h4>
-                        <div class="item-price">
-                          <span class="cost">99,000<span class="price-unit">원</span> </span>
-                          <span class="discount">49,000<span class="price-unit">원</span> </span>
-                        </div>
-                      </div>
-                    </a>
-                    <div class="thumb-layer">
-                      <div class="thumb-icon">
-                        <a href=""> <i class="xi-heart-o"></i><span>찜하기</span> </a>
-                      </div>
-                      <div class="thumb-icon">
-                        <a href=""> <i class="xi-cart-o"></i><span>장바구니</span> </a>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-          <!-- new prod group : e -->
-        </article>
-        <!-- new products : e -->
-        <!-- top products : s -->
-        <article class="top-prod-area prod-list">
-          <div class="cont-top">
-            <h3 class="tit">TOP PRODUCTS</h3>
-          </div>
-          <!-- top prod group : s -->
-          <div class="prod-thumb-wrap">
-            <ul class="single-spacing">
-              <li class="prod-thumb">
-                <a href="">
-                  <div class="badge-wrap">
-                    <span class="badge new">NEW</span>
-                    <span class="badge hot on">HOT</span>
+    <!-- zzim layer pop : s -->
+    <div class="layer-pop zzim">
+      <a href="#" class="close" onclick="closeLayer();">
+        <i class="xi-close"><span class="blind">닫기</span></i>
+      </a>
+      <div class="layer-wrap">
+        <div class="cont-top">
+          <h2 class="tit">WISH LIST</h2>
+        </div>
+        <div class="view-zzim">
+          <table class="list-table">
+            <caption class="blind">
+              위시리스트 제목
+            </caption>
+            <colgroup>
+              <col style="width: 30px;" />
+              <col style="width: auto;" />
+              <col style="width: auto;" />
+            </colgroup>
+            <thead>
+              <tr class="table-head">
+                <td id="th-select-wish">
+                  <label class="label-check all-select">
+                    <input type="checkbox" name="allCheck" class="ico-check" />
+                  </label>
+                  <span class="blind">전체 선택</span>
+                </td>
+                <td id="th-info-wish">상품/옵션 정보</td>
+                <td class="th-delete blind">리스트 삭제</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="table-list view-prod no-list">
+                <td colspan="3">
+                  <span class="notice">WISH LIST에 담긴 상품이 없습니다.</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- cart control : s -->
+        <div class="list-table-control">
+          <button type="button" class="mid btn-line delete">선택 상품 삭제</button>
+          <button type="button" class="mid btn-line add-cart">쇼핑 리스트 추가</button>
+        </div>
+        <!-- cart control : e -->
+      </div>
+    </div>
+    <!-- zzim layer pop : e -->
+
+    <!-- cart layer pop : s -->
+    <div class="layer-pop cart">
+      <a href="#" class="close" onclick="closeLayer();">
+        <i class="xi-close"><span class="blind">닫기</span></i>
+      </a>
+      <div class="layer-wrap">
+        <div class="cont-top">
+          <h2 class="tit">SHOPPING LIST</h2>
+        </div>
+        <div class="view-cart">
+          <table class="list-table">
+            <caption class="blind">
+              쇼핑리스트 제목
+            </caption>
+            <colgroup>
+              <col style="width: 30px;" />
+              <col style="width: 45%;" />
+              <col style="width: 10%;" />
+              <col style="width: 20%;" />
+              <col style="width: 10%;" />
+              <col style="width: auto;" />
+            </colgroup>
+            <thead>
+              <tr class="table-head">
+                <td id="th-select-shopping">
+                  <label class="label-check all-select">
+                    <input type="checkbox" name="allCheck" class="ico-check" />
+                  </label>
+                  <span class="blind">전체 선택</span>
+                </td>
+                <td id="th-info-shopping">상품/옵션 정보</td>
+                <td id="th-quantity">수량</td>
+                <td id="th-total-price">상품금액</td>
+                <td id="th-delivery-fee">배송비</td>
+                <td class="th-delete blind">리스트 삭제</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="table-list view-prod">
+                <td class="select-list">
+                  <label class="label-check">
+                    <input type="checkbox" class="ico-check" />
+                  </label>
+                  <span class="blind">제품 선택</span>
+                </td>
+                <td class="list-info">
+                  <div class="prod-img-box">
+                    <img src="./img/item/N202UTS510.png" alt="N202UTS510" />
                   </div>
-                  <div class="prod-img">
-                    <img src="./img/item/N202MPL810.png" alt="N202MPL810" />
+                  <div class="prod-info-box">
+                    <a href="javascript:void();" class="name">내셔널지오그래픽 N202UTS510 핫 썸머 컨셉 티셔츠 1 ORANGE</a>
+                    <span class="prod-size">SIZE<span class="size-num">95</span></span>
                   </div>
-                  <div class="prod-info">
-                    <h4 class="item-name">내셔널지오그래픽 N202MPL810 웰라카 피케 반팔 티셔츠 CARBON BLACK</h4>
-                    <div class="item-price">
-                      <span class="cost blind">59,000<span class="price-unit">원</span> </span>
-                      <span class="discount">59,000<span class="price-unit">원</span> </span>
-                    </div>
+                </td>
+                <td class="list-quantity">
+                  <div class="prod-quantity">
+                    <span class="blind">제품 수량</span>
+                    <button type="button" onclick="controlQuantity(-1, this);" class="btn-reduce">
+                      <img src="./img/common/btn_reduce.png" alt="감소" />
+                      수량 감소
+                    </button>
+                    <input type="text" name="quantity-num" class="quantity" readonly="readonly" value="1" />
+                    <button type="button" onclick="controlQuantity(1, this);" class="btn-rise">
+                      <img src="./img/common/btn_rise.png" alt="추가" />
+                      수량 추가
+                    </button>
                   </div>
-                </a>
-                <div class="thumb-layer">
-                  <div class="thumb-icon">
-                    <a href=""> <i class="xi-heart-o"></i><span>찜하기</span> </a>
+                </td>
+                <td class="list-total-price">
+                  <span class="cost"><span class="cost-price">0</span>원</span><span class="total-price">59,000</span>원
+                </td>
+                <td class="list-delivery-fee">
+                  <span class="delivery-fee">0</span><span class="small-notice">3만원 이상<br />무료배송</span>
+                </td>
+                <td class="th-delete">
+                  <a href="#" class="delete"><i class="xi-close"></i></a>
+                </td>
+              </tr>
+              <tr class="table-list view-prod">
+                <td class="select-list">
+                  <label class="label-check">
+                    <input type="checkbox" class="ico-check" />
+                  </label>
+                  <span class="blind">제품 선택</span>
+                </td>
+                <td class="list-info">
+                  <div class="prod-img-box">
+                    <img src="./img/item/N202MBS610.png" alt="N202UTS510" />
                   </div>
-                  <div class="thumb-icon">
-                    <a href=""> <i class="xi-cart-o"></i><span>장바구니</span> </a>
+                  <div class="prod-info-box">
+                    <a href="javascript:void();" class="name">내셔널지오그래픽 N202MBS610 남성 4부 립스탑 조직 보드숏 CARBON BLACK</a>
+                    <span class="prod-size">SIZE<span class="size-num">100</span></span>
                   </div>
-                </div>
-              </li>
-              <li class="prod-thumb">
-                <a href="">
-                  <div class="badge-wrap">
-                    <span class="badge new">NEW</span>
-                    <span class="badge hot">HOT</span>
+                </td>
+                <td class="list-quantity">
+                  <div class="prod-quantity">
+                    <span class="blind">제품 수량</span>
+                    <button type="button" onclick="controlQuantity(-1, this);" class="btn-reduce">
+                      <img src="./img/common/btn_reduce.png" alt="감소" />
+                      수량 감소
+                    </button>
+                    <input type="text" name="quantity-num" class="quantity" readonly="readonly" value="1" />
+                    <button type="button" onclick="controlQuantity(1, this);" class="btn-rise">
+                      <img src="./img/common/btn_rise.png" alt="추가" />
+                      수량 추가
+                    </button>
                   </div>
-                  <div class="prod-img">
+                </td>
+                <td class="list-total-price">
+                  <span class="cost"><span class="cost-price">0</span>원</span><span class="total-price">59,000</span>원
+                </td>
+                <td class="list-delivery-fee">
+                  <span class="delivery-fee">0</span><span class="small-notice">3만원 이상<br />무료배송</span>
+                </td>
+                <td class="th-delete">
+                  <a href="#" class="delete"><i class="xi-close"></i></a>
+                </td>
+              </tr>
+              <tr class="table-list view-prod">
+                <td class="select-list">
+                  <label class="label-check">
+                    <input type="checkbox" class="ico-check" />
+                  </label>
+                  <span class="blind">제품 선택</span>
+                </td>
+                <td class="list-info">
+                  <div class="prod-img-box">
                     <img src="./img/item/N202MJP920.png" alt="N202MJP920" />
                   </div>
-                  <div class="prod-info">
-                    <h4 class="item-name">내셔널지오그래픽 N202MJP920 카니스 홑겹 스탠카라 점퍼 CARBON BLACK</h4>
-                    <div class="item-price">
-                      <span class="cost">159,000<span class="price-unit">원</span> </span>
-                      <span class="discount">139,000<span class="price-unit">원</span> </span>
-                    </div>
+                  <div class="prod-info-box">
+                    <a href="javascript:void();" class="name">내셔널지오그래픽 N202MJP920 카니스 홑겹 스탠카라 점퍼 CARBON BLACK</a>
+                    <span class="prod-size">SIZE<span class="size-num">95</span></span>
                   </div>
-                </a>
-                <div class="thumb-layer">
-                  <div class="thumb-icon">
-                    <a href=""> <i class="xi-heart-o"></i><span>찜하기</span> </a>
+                </td>
+                <td class="list-quantity">
+                  <div class="prod-quantity">
+                    <span class="blind">제품 수량</span>
+                    <button type="button" onclick="controlQuantity(-1, this);" class="btn-reduce">
+                      <img src="./img/common/btn_reduce.png" alt="감소" />
+                      수량 감소
+                    </button>
+                    <input type="text" name="quantity-num" class="quantity" readonly="readonly" value="1" />
+                    <button type="button" onclick="controlQuantity(1, this);" class="btn-rise">
+                      <img src="./img/common/btn_rise.png" alt="추가" />
+                      수량 추가
+                    </button>
                   </div>
-                  <div class="thumb-icon">
-                    <a href=""> <i class="xi-cart-o"></i><span>장바구니</span> </a>
+                </td>
+                <td class="list-total-price">
+                  <span class="cost on"><span class="cost-price">159,000</span>원</span><span
+                    class="total-price">139,000</span>원
+                </td>
+                <td class="list-delivery-fee">
+                  <span class="delivery-fee">0</span><span class="small-notice">3만원 이상<br />무료배송</span>
+                </td>
+                <td class="th-delete">
+                  <a href="#" class="delete"><i class="xi-close"></i></a>
+                </td>
+              </tr>
+              <tr class="table-list view-prod">
+                <td class="select-list">
+                  <label class="label-check">
+                    <input type="checkbox" class="ico-check" />
+                  </label>
+                  <span class="blind">제품 선택</span>
+                </td>
+                <td class="list-info">
+                  <div class="prod-img-box">
+                    <img src="./img/item/N192ACR310.png" alt="N192ACR310" />
                   </div>
-                </div>
-              </li>
-              <li class="prod-thumb">
-                <a href="">
-                  <div class="badge-wrap">
-                    <span class="badge new on">NEW</span>
-                    <span class="badge hot">HOT</span>
+                  <div class="prod-info-box">
+                    <a href="javascript:void();" class="name">내셔널지오그래픽 가방 N192ACR310 클리어 드라이백 10L 워터백 PINK</a>
+                    <span class="prod-size">SIZE<span class="size-num">95</span></span>
                   </div>
-                  <div class="prod-img">
-                    <img src="./img/item/N202MPL810_ARCTICMINT.png" alt="N202MPL810_ARCTICMINT" />
+                </td>
+                <td class="list-quantity">
+                  <div class="prod-quantity">
+                    <span class="blind">제품 수량</span>
+                    <button type="button" onclick="controlQuantity(-1, this);" class="btn-reduce">
+                      <img src="./img/common/btn_reduce.png" alt="감소" />
+                      수량 감소
+                    </button>
+                    <input type="text" name="quantity-num" class="quantity" readonly="readonly" value="1" />
+                    <button type="button" onclick="controlQuantity(1, this);" class="btn-rise">
+                      <img src="./img/common/btn_rise.png" alt="추가" />
+                      수량 추가
+                    </button>
                   </div>
-                  <div class="prod-info">
-                    <h4 class="item-name">내셔널지오그래픽 N202MPL810 웰라카 피케 반팔 티셔츠 ARCTIC MINT</h4>
-                    <div class="item-price">
-                      <span class="cost">69,000<span class="price-unit">원</span> </span>
-                      <span class="discount">59,000<span class="price-unit">원</span> </span>
-                    </div>
-                  </div>
-                </a>
-                <div class="thumb-layer">
-                  <div class="thumb-icon">
-                    <a href=""> <i class="xi-heart-o"></i><span>찜하기</span> </a>
-                  </div>
-                  <div class="thumb-icon">
-                    <a href=""> <i class="xi-cart-o"></i><span>장바구니</span> </a>
-                  </div>
-                </div>
-              </li>
-              <li class="prod-thumb">
-                <a href="">
-                  <div class="badge-wrap">
-                    <span class="badge new">NEW</span>
-                    <span class="badge hot">HOT</span>
-                  </div>
-                  <div class="prod-img">
-                    <img src="./img/item/N202MRG620.png" alt="N202MRG620" />
-                  </div>
-                  <div class="prod-info">
-                    <h4 class="item-name">내셔널지오그래픽 N202MRG620 남성 베이직 빅 로고 래쉬가드 BLUE PRINT</h4>
-                    <div class="item-price">
-                      <span class="cost">69,000<span class="price-unit">원</span> </span>
-                      <span class="discount">59,000<span class="price-unit">원</span> </span>
-                    </div>
-                  </div>
-                </a>
-                <div class="thumb-layer">
-                  <div class="thumb-icon">
-                    <a href=""> <i class="xi-heart-o"></i><span>찜하기</span> </a>
-                  </div>
-                  <div class="thumb-icon">
-                    <a href=""> <i class="xi-cart-o"></i><span>장바구니</span> </a>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-          <!-- top prod group : e -->
-        </article>
-        <!-- top products : e -->
-        <!-- sale products : s -->
-        <article class="sale-prod-area prod-list">
-          <div class="cont-top">
-            <h3 class="tit">SALE PRODUCTS</h3>
-          </div>
-          <!-- sale prod group : s -->
-          <div class="prod-thumb-wrap">
-            <ul class="single-spacing">
-              <li class="prod-thumb">
-                <a href="">
-                  <div class="badge-wrap">
-                    <span class="badge new">NEW</span>
-                    <span class="badge hot">HOT</span>
-                  </div>
-                  <div class="prod-img">
-                    <img src="./img/item/N202ACR070.png" alt="N202ACR070" />
-                  </div>
-                  <div class="prod-info">
-                    <h4 class="item-name">내셔널지오그래픽 가방 N202ACR070 비치드클리어백 워터백 WHITE</h4>
-                    <div class="item-price">
-                      <span class="cost">49,000<span class="price-unit">원</span> </span>
-                      <span class="discount">39,000<span class="price-unit">원</span> </span>
-                    </div>
-                  </div>
-                </a>
-                <div class="thumb-layer">
-                  <div class="thumb-icon">
-                    <a href=""> <i class="xi-heart-o"></i><span>찜하기</span> </a>
-                  </div>
-                  <div class="thumb-icon">
-                    <a href=""> <i class="xi-cart-o"></i><span>장바구니</span> </a>
-                  </div>
-                </div>
-              </li>
-              <li class="prod-thumb">
-                <a href="">
-                  <div class="badge-wrap">
-                    <span class="badge new">NEW</span>
-                    <span class="badge hot on">HOT</span>
-                  </div>
-                  <div class="prod-img">
-                    <img src="./img/item/N202ACR040.png" alt="N202ACR040" />
-                  </div>
-                  <div class="prod-info">
-                    <h4 class="item-name">내셔널지오그래픽 가방 N202ACR040 비치드패커블백 워터백 BLACK</h4>
-                    <div class="item-price">
-                      <span class="cost">41,000<span class="price-unit">원</span> </span>
-                      <span class="discount">31,000<span class="price-unit">원</span> </span>
-                    </div>
-                  </div>
-                </a>
-                <div class="thumb-layer">
-                  <div class="thumb-icon">
-                    <a href=""> <i class="xi-heart-o"></i><span>찜하기</span> </a>
-                  </div>
-                  <div class="thumb-icon">
-                    <a href=""> <i class="xi-cart-o"></i><span>장바구니</span> </a>
-                  </div>
-                </div>
-              </li>
-              <li class="prod-thumb">
-                <a href="">
-                  <div class="badge-wrap">
-                    <span class="badge new">NEW</span>
-                    <span class="badge hot">HOT</span>
-                  </div>
-                  <div class="prod-img">
-                    <img src="./img/item/N192UTS910.png" alt="N192UTS910" />
-                  </div>
-                  <div class="prod-info">
-                    <h4 class="item-name">내셔널지오그래픽 티셔츠 N192UTS910 래타나 트리플 프린트 반팔 티셔츠 WHITE</h4>
-                    <div class="item-price">
-                      <span class="cost">59,000<span class="price-unit">원</span> </span>
-                      <span class="discount">41,300<span class="price-unit">원</span> </span>
-                    </div>
-                  </div>
-                </a>
-                <div class="thumb-layer">
-                  <div class="thumb-icon">
-                    <a href=""> <i class="xi-heart-o"></i><span>찜하기</span> </a>
-                  </div>
-                  <div class="thumb-icon">
-                    <a href=""> <i class="xi-cart-o"></i><span>장바구니</span> </a>
-                  </div>
-                </div>
-              </li>
-              <li class="prod-thumb">
-                <a href="">
-                  <div class="badge-wrap">
-                    <span class="badge new">NEW</span>
-                    <span class="badge hot">HOT</span>
-                  </div>
-                  <div class="prod-img">
-                    <img src="./img/item/N192UTS930.png" alt="N192UTS930" />
-                  </div>
-                  <div class="prod-info">
-                    <h4 class="item-name">내셔널지오그래픽 티셔츠 N192UTS930 만텔라 빅 로고 반팔 티셔츠 M GREY</h4>
-                    <div class="item-price">
-                      <span class="cost">59,000<span class="price-unit">원</span> </span>
-                      <span class="discount">50,000<span class="price-unit">원</span> </span>
-                    </div>
-                  </div>
-                </a>
-                <div class="thumb-layer">
-                  <div class="thumb-icon">
-                    <a href=""> <i class="xi-heart-o"></i><span>찜하기</span> </a>
-                  </div>
-                  <div class="thumb-icon">
-                    <a href=""> <i class="xi-cart-o"></i><span>장바구니</span> </a>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-          <!-- sale prod group : e -->
-        </article>
-        <!-- sale products : e -->
-      </div>
-
-      <!-- sns : s -->
-      <article class="sns-wrap">
-        <div class="cont-wrap video-box-wrap">
-          <div class="cont-top">
-            <h3 class="tit">National Geographic Clip!</h3>
-          </div>
-          <ul class="video-box">
-            <li class="youtube-thumb">
-              <iframe src="https://www.youtube.com/embed/wuhgH70sAxA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </li>
-            <li class="youtube-thumb">
-              <iframe src="https://www.youtube.com/embed/nVD46WzD1Vk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </li>
-            <li class="youtube-thumb">
-              <iframe src="https://www.youtube.com/embed/_XqMYramoJ8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </li>
-            <li class="youtube-thumb">
-              <iframe src="https://www.youtube.com/embed/MT_yFyE5z1U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </li>
-            <li class="youtube-thumb">
-              <iframe src="https://www.youtube.com/embed/c593QoKvK8Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </li>
-          </ul>
+                </td>
+                <td class="list-total-price">
+                  <span class="cost"><span class="cost-price">35,000</span>원</span><span
+                    class="total-price">24,500</span>원
+                </td>
+                <td class="list-delivery-fee">
+                  <span class="delivery-fee">0</span><span class="small-notice">3만원 이상<br />무료배송</span>
+                </td>
+                <td class="th-delete">
+                  <a href="#" class="delete"><i class="xi-close"></i></a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <div class="cont-wrap sns-box-wrap">
-          <ul>
-            <li class="facebook sns-btn">
-              <a href="https://www.facebook.com/NATGEO.APPAREL.KR/" target="_blank">
-                <i class="xi-facebook"><span class="blind">facebook</span></i>
-              </a>
-            </li>
-            <li class="youtube sns-btn">
-              <a href="https://www.youtube.com/channel/UCKVExhV0R41VJr2q74J8ymw?view_as=subscriber" target="_blank">
-                <i class="xi-youtube"><span class="blind">youtube</span></i>
-              </a>
-            </li>
-            <li class="instagram sns-btn">
-              <a href="https://www.instagram.com/ng_apparel" target="_blank">
-                <i class="xi-instagram"><span class="blind">instagram</span></i>
-              </a>
-            </li>
-            <li class="blog sns-btn">
-              <a href="https://blog.naver.com/thenatureholdings" target="_blank">
-                <i class="xi-blogger"><span class="blind">naverblog</span></i>
-              </a>
-            </li>
-          </ul>
+        <!-- cart control : s -->
+        <div class="list-table-control">
+          <button type="button" class="mid btn-line delete">선택 상품 삭제</button>
+          <button type="button" class="mid btn-line add-zzim">WISH LIST 추가</button>
+          <button type="button" class="mid btn-line yellow order">견적서 출력</button>
         </div>
-      </article>
-      <!-- sns : e -->
-    </section>
-    <!-- main : e -->
-    <!-- footer : s -->
-    <footer id="footer">
-      <div class="footer-ico-group">
-        <a href="#" class="fixed-btn scroll-top-btn">맨 위로 가기</a>
-        <a href="http://pf.kakao.com/_GQIxmC" class="fixed-btn kakao-profile" target="_blank">내셔널지오그래픽 카카오 프로필</a>
+        <!-- cart control : e -->
+        <!-- cart amount : s -->
+        <div class="cart-amount">
+          <div class="list prod-amount">
+            <dl class="amount-total">
+              <dt class="tit">상품 금액</dt>
+              <dd class="result"><span class="num">301,500</span>원</dd>
+            </dl>
+          </div>
+          <div class="operator"><span class="minus"></span></div>
+          <div class="list prod-amount">
+            <dl class="amount-discount">
+              <dt class="tit">할인 금액</dt>
+              <dd class="result"><span class="num">20,000</span>원</dd>
+            </dl>
+          </div>
+          <div class="operator"><span class="plus"></span></div>
+          <div class="list prod-amount">
+            <dl class="amount-delivery">
+              <dt class="tit">배송비</dt>
+              <dd class="result"><span class="num">0</span>원</dd>
+            </dl>
+          </div>
+          <div class="operator"><span class="equal"></span></div>
+          <div class="list prod-amount total">
+            <dl class="amount-total">
+              <dt class="tit">결제 예정 금액</dt>
+              <dd class="result"><span class="num">271,500</span>원</dd>
+            </dl>
+          </div>
+        </div>
+        <!-- cart amount : e -->
+        <!-- cart layer pop 주문하기 : s -->
+        <button type="button" class="large btn"><span class="btn-name">주문하기</span></button>
+        <!-- cart layer pop 주문하기 : e -->
       </div>
-      <div class="footer-top-wrap cont-wrap">
-        <div class="footer-inner">
-          <div class="footer-group">
-            <h4 class="tit">Information</h4>
-            <ul>
-              <li><a href="">회사소개</a></li>
-              <li><a href="">이용안내</a></li>
-              <li><a href="">개인정보처리방침</a></li>
-              <li><a href="">브랜드 사이트</a></li>
-              <li><a href="">이용약관</a></li>
-              <li><a href="">매장안내</a></li>
-            </ul>
+    </div>
+    <!-- cart layer pop : e -->
+  </header>
+  <!-- header : e -->
+  <!-- sub : s -->
+  <div id="sub" class="sub-main">
+    <!-- search : s -->
+    <div class="search-area sub-box">
+      <ul>
+        <li class="sub-btn">
+          <a href="#">STORE</a>
+          <a href="#">CS CENTER</a>
+        </li>
+        <li class="status">
+          <div class="profile-grade">
+            <span class="guest on">GUEST</span>
+            <span class="member">MEMBER</span>
           </div>
-          <div class="footer-group">
-            <h4 class="tit">Notice</h4>
-            <ul>
-              <li><a href="">내셔널지오그래픽 어패럴 스마트앱 출시</a></li>
-              <li><a href="">[내셔널지오그래픽] 더 오리지널6 텐트설치 영상</a></li>
-              <li><a href="">[내셔널지오그래픽] 더 오리지널 텐트4 설치 영상</a></li>
-              <li><a href="">내셔널지오그래픽 캐리어 비밀번호 변경 방법 - B type</a></li>
-              <li><a href="">내셔널지오그래픽 캐리어 비밀번호 변경 방법 - A type</a></li>
-              <li><a href="">내셔널지오그래픽 캐리어 비밀번호 변경 방법 (범퍼 캐리어)</a></li>
-            </ul>
+          <div class="profile-info">
+            <p class="guest-message on">회원 가입하시는 모든 분들께<br /><span class="bold">5000P</span>를 드립니다.</p>
+            <p class="member-message"><span class="user-name">내셔널지오그래픽</span>님<br />환영합니다.</p>
           </div>
-          <div class="footer-group">
-            <h4 class="tit">Contact Us</h4>
-            <ul>
-              <li class="cs-center">
-                <div class="call-num"><i class="xi-call"></i><a href="tel:1588-2906">1588-2906</a></div>
-                <span>평일 : 10:00am ~ 5:00pm</span>
-                <span>토/일, 공휴일은 휴무입니다.</span>
-              </li>
-              <li class="bank-account">
-                123-456789-87-654
-                <span>은행 : 기업은행</span>
-                <span>예금주 : (주)더네이쳐홀딩스</span>
-              </li>
-            </ul>
-          </div>
-          <div class="footer-group">
-            <h4 class="tit">Company</h4>
-            <div class="company-info">
-              <span class="info-block no-dot">(주)더네이쳐홀딩스</span>
-              <span class="info-block">대표 : 박영준</span>
-              <span class="info-block">사업자등록번호 : 106-86-26388</span>
-              <span class="info-block">통신판매업신고번호 : 제2015-서울금천-0414호</span>
-              <span class="info-block">개인정보관리자 : 전제구</span>
-              <address>서울특별시 금천구 가산디지털2로 30 (알에스엠타워) 11층</address>
-              <span class="info-block no-dot line">Tel. : <a href="tel:1588-2906">1588-2906</a></span>
-              <span class="info-block no-dot line">Fax : 02-3274-0805</span>
-              <span class="info-block no-dot line">e-mail : <a href="mailto:jackman@thenatureholdings.co.kr" class="yellow">jackman@thenatureholdings.co.kr</a></span>
+        </li>
+        <li class="sub-btn bottom">
+          <a href="#">LOG IN</a>
+          <a href="#">JOIN</a>
+        </li>
+        <li class="search-wrap">
+          <form action="/search">
+            <input type="text" placeholder="SEARCH" />
+            <input type="image" src="./img/common/search_btn.png" alt="검색" class="search-btn" />
+          </form>
+        </li>
+      </ul>
+    </div>
+    <!-- search : e -->
+    <!-- small banner : s -->
+    <div class="top-aside-banner sub-box">
+      <p>FREE한<br />LUCKY<br />SUMMER</p>
+      <span class="date">2020. 07. 30 ~ 08. 07</span>
+    </div>
+    <!-- small banner : e -->
+    <!-- 내비게이션 : s -->
+    <nav class="nav sub-box">
+      <h2 class="tit">MENU</h2>
+      <ul class="category">
+        <li><a href="#">PROMOTION</a></li>
+        <li><a href="#">NEW ARRIVAL</a></li>
+        <li><a href="#">MAN</a></li>
+        <li><a href="#">WOMAN</a></li>
+        <li><a href="#">KIDS</a></li>
+        <li><a href="#">BAG</a></li>
+        <li><a href="#">HEAD WEAR</a></li>
+        <li><a href="#">FOOT WEAR</a></li>
+        <li><a href="#">SKIN CARE</a></li>
+        <li><a href="#">SUITCASE</a></li>
+        <li><a href="#">CAMPING</a></li>
+        <li><a href="#">SURF WEAR</a></li>
+      </ul>
+    </nav>
+    <!-- 내비게이션 : e -->
+    <div class="mid-aside-banner sub-box">
+      <img src="./img/event/subBanner_divecloud.png" alt="dive cloud 슬리퍼 & 샌들 기획전" />
+    </div>
+    <!-- 태그 위젯 : s -->
+    <div class="tag-widget-wrap sub-box">
+      <h2 class="tit">Tags Widget</h2>
+      <div class="tag-group">
+        <span class="tag"><a href="#">Swim Wear</a></span>
+        <span class="tag"><a href="#">Women</a></span>
+        <span class="tag"><a href="#">Men</a></span>
+        <span class="tag"><a href="#">Equipment</a></span>
+        <span class="tag"><a href="#">Apparel</a></span>
+        <span class="tag"><a href="#">Best</a></span>
+        <span class="tag"><a href="#">Hiking</a></span>
+        <span class="tag"><a href="#">Theme</a></span>
+        <span class="tag"><a href="#">Super</a></span>
+        <span class="tag"><a href="#">Duper</a></span>
+        <span class="tag"><a href="#">Accessories</a></span>
+        <span class="tag"><a href="#">Responsive</a></span>
+      </div>
+      <span class="page-view-btn"><a href="#">view all tags</a></span>
+    </div>
+    <!-- 태그 위젯 : e -->
+    <!-- Look book : s -->
+    <div class="lookbook-wrap sub-box">
+      <h2 class="tit">Articles Experts</h2>
+      <div class="article-group">
+        <ul>
+          <li><a href="#">옷깃을 세워야 할 시간</a></li>
+          <li><a href="#">내셔널지오그래픽을 입는다는 것</a></li>
+          <li><a href="#">넘실거리는 물 위에서</a></li>
+          <li><a href="#">도심 속 작은 숲을 거닐다</a></li>
+          <li><a href="#">2020 HOT SUMMER COLLECTION</a></li>
+          <li><a href="#">뜨거운 여름의 빛나는 조연</a></li>
+          <li><a href="#">AROUND CAMPING</a></li>
+          <li>
+            <a href="#">랜선 힐링을 선사하는 &lt;tvN 삼시세끼-어촌편5&gt;속 내셔널지오그래픽 아이템</a>
+          </li>
+        </ul>
+      </div>
+      <span class="page-view-btn"><a href="#">view all</a></span>
+    </div>
+    <!-- Look book : e -->
+  </div>
+  <!-- sub : e -->
+  <!-- main : s -->
+  <section id="main">
+    <!-- top banner : s -->
+    <div class="top-banner-wrap">
+      <ul class="top-banner-group">
+        <li class="banner">
+          <div class="cont-wrap">
+            <div class="banner-txt-wrap">
+              <h2 class="tit">
+                SUMMER VACANCE<br />
+                구매 혜택 프로모션
+              </h2>
+              <p class="date">2020. 08. 18</p>
+              <a href="#" class="large btn"><span class="btn-name">BUY NOW</span></a>
             </div>
           </div>
+          <img src="./img/event/banner01_summerwear.png" alt="SUMMER VACANCE" />
+        </li>
+        <li class="banner">
+          <div class="cont-wrap">
+            <div class="banner-txt-wrap">
+              <h2 class="tit">
+                20FW KIDS<br />
+                EARLY BIRDS
+              </h2>
+              <p class="date">2020. 07. 23 ~ 08. 31</p>
+              <a href="#" class="large btn"><span class="btn-name">BUY NOW</span></a>
+            </div>
+          </div>
+          <img src="./img/event/banner02_kidsEarlybird.png" alt="20FW KIDS EARLY BIRDS" />
+        </li>
+        <li class="banner">
+          <div class="cont-wrap">
+            <div class="banner-txt-wrap">
+              <h2 class="tit">
+                컬러로 기록하는<br />
+                우리들의 청춘이야기
+              </h2>
+              <p class="date">#오버핏 반팔티</p>
+              <a href="#" class="large btn"><span class="btn-name">BUY NOW</span></a>
+            </div>
+          </div>
+          <img src="./img/event/banner03_colorRecord.png" alt="오버핏 반팔티 기획전" />
+        </li>
+      </ul>
+    </div>
+    <!-- top banner : e -->
+
+    <div class="cont-wrap">
+      <!-- new products : s -->
+      <section class="new-prod-area prod-list">
+        <div class="cont-top">
+          <h3 class="tit">NEW PRODUCTS</h3>
+        </div>
+        <!-- new prod group : s -->
+        <div class="prod-thumb-wrap">
+          <ul class="double-spacing">
+            <li class="thumb-line-wrap">
+              <ul>
+                <li class="prod-thumb">
+                  <a href="#">
+                    <div class="badge-wrap">
+                      <span class="badge new on">NEW</span>
+                      <span class="badge hot">HOT</span>
+                    </div>
+                    <div class="prod-img">
+                      <img src="./img/item/N202UTS550.png" alt="N202UTS550" />
+                    </div>
+                    <div class="prod-info">
+                      <h4 class="item-name">내셔널지오그래픽 N202UTS550 핫 썸머 컨셉 티셔츠 6 WHITE</h4>
+                      <div class="item-price">
+                        <span class="cost blind">59,000<span class="price-unit">원</span> </span>
+                        <span class="discount">59,000<span class="price-unit">원</span> </span>
+                      </div>
+                    </div>
+                  </a>
+                  <div class="thumb-layer">
+                    <div class="thumb-icon">
+                      <a href="#"> <i class="xi-heart-o"></i><span>찜하기</span> </a>
+                    </div>
+                    <div class="thumb-icon">
+                      <a href="#"> <i class="xi-cart-o"></i><span>장바구니</span> </a>
+                    </div>
+                  </div>
+                </li>
+                <li class="prod-thumb">
+                  <a href="#">
+                    <div class="badge-wrap">
+                      <span class="badge new">NEW</span>
+                      <span class="badge hot on">HOT</span>
+                    </div>
+                    <div class="prod-img">
+                      <img src="./img/item/N202UTS530.png" alt="N202UTS530" />
+                    </div>
+                    <div class="prod-info">
+                      <h4 class="item-name">내셔널지오그래픽 N202UTS530 핫 썸머 컨셉 티셔츠 3 CARBON BLACK</h4>
+                      <div class="item-price">
+                        <span class="cost blind">59,000<span class="price-unit">원</span> </span>
+                        <span class="discount">59,000<span class="price-unit">원</span> </span>
+                      </div>
+                    </div>
+                  </a>
+                  <div class="thumb-layer">
+                    <div class="thumb-icon">
+                      <a href="#"> <i class="xi-heart-o"></i><span>찜하기</span> </a>
+                    </div>
+                    <div class="thumb-icon">
+                      <a href="#"> <i class="xi-cart-o"></i><span>장바구니</span> </a>
+                    </div>
+                  </div>
+                </li>
+                <li class="prod-thumb">
+                  <a href="#">
+                    <div class="badge-wrap">
+                      <span class="badge new">NEW</span>
+                      <span class="badge hot">HOT</span>
+                    </div>
+                    <div class="prod-img">
+                      <img src="./img/item/N195AFW010.png" alt="N195AFW010" />
+                    </div>
+                    <div class="prod-info">
+                      <h4 class="item-name">내셔널지오그래픽 신발 N195AFW010 다이브 플러스 슬리퍼 YELLOW</h4>
+                      <div class="item-price">
+                        <span class="cost blind">39,000<span class="price-unit">원</span> </span>
+                        <span class="discount">39,000<span class="price-unit">원</span> </span>
+                      </div>
+                    </div>
+                  </a>
+                  <div class="thumb-layer">
+                    <div class="thumb-icon">
+                      <a href="#"> <i class="xi-heart-o"></i><span>찜하기</span> </a>
+                    </div>
+                    <div class="thumb-icon">
+                      <a href="#"> <i class="xi-cart-o"></i><span>장바구니</span> </a>
+                    </div>
+                  </div>
+                </li>
+                <li class="prod-thumb">
+                  <a href="#">
+                    <div class="badge-wrap">
+                      <span class="badge new">NEW</span>
+                      <span class="badge hot">HOT</span>
+                    </div>
+                    <div class="prod-img">
+                      <img src="./img/item/N205AGL010.png" alt="N205AGL010" />
+                    </div>
+                    <div class="prod-info">
+                      <h4 class="item-name">내셔널지오그래픽 ACC N205AGL010 아이스 슬리브 쿨토시 팔토시</h4>
+                      <div class="item-price">
+                        <span class="cost blind">19,000<span class="price-unit">원</span> </span>
+                        <span class="discount">19,000<span class="price-unit">원</span> </span>
+                      </div>
+                    </div>
+                  </a>
+                  <div class="thumb-layer">
+                    <div class="thumb-icon">
+                      <a href="#"> <i class="xi-heart-o"></i><span>찜하기</span> </a>
+                    </div>
+                    <div class="thumb-icon">
+                      <a href="#"> <i class="xi-cart-o"></i><span>장바구니</span> </a>
+                    </div>
+                  </div>
+                </li>
+                <li class="prod-thumb">
+                  <a href="#">
+                    <div class="badge-wrap">
+                      <span class="badge new">NEW</span>
+                      <span class="badge hot">HOT</span>
+                    </div>
+                    <div class="prod-img">
+                      <img src="./img/item/N202MBS610.png" alt="N202MBS610" />
+                    </div>
+                    <div class="prod-info">
+                      <h4 class="item-name">내셔널지오그래픽 N202MBS610 남성 4부 립스탑 조직 보드숏 CARBON BLACK</h4>
+                      <div class="item-price">
+                        <span class="cost blind">59,000<span class="price-unit">원</span> </span>
+                        <span class="discount">59,000<span class="price-unit">원</span> </span>
+                      </div>
+                    </div>
+                  </a>
+                  <div class="thumb-layer">
+                    <div class="thumb-icon">
+                      <a href="#"> <i class="xi-heart-o"></i><span>찜하기</span> </a>
+                    </div>
+                    <div class="thumb-icon">
+                      <a href="#"> <i class="xi-cart-o"></i><span>장바구니</span> </a>
+                    </div>
+                  </div>
+                </li>
+                <li class="prod-thumb">
+                  <a href="#">
+                    <div class="badge-wrap">
+                      <span class="badge new">NEW</span>
+                      <span class="badge hot">HOT</span>
+                    </div>
+                    <div class="prod-img">
+                      <img src="./img/item/N185AFW040.png" alt="N185AFW040" />
+                    </div>
+                    <div class="prod-info">
+                      <h4 class="item-name">내셔널지오그래픽 신발 N185AFW040 ZURIPPER 주리퍼 샌들 ORANGE</h4>
+                      <div class="item-price">
+                        <span class="cost">59,000<span class="price-unit">원</span> </span>
+                        <span class="discount">29,000<span class="price-unit">원</span> </span>
+                      </div>
+                    </div>
+                  </a>
+                  <div class="thumb-layer">
+                    <div class="thumb-icon">
+                      <a href="#"> <i class="xi-heart-o"></i><span>찜하기</span> </a>
+                    </div>
+                    <div class="thumb-icon">
+                      <a href="#"> <i class="xi-cart-o"></i><span>장바구니</span> </a>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li class="thumb-line-wrap">
+              <ul>
+                <li class="prod-thumb">
+                  <a href="#">
+                    <div class="badge-wrap">
+                      <span class="badge new on">NEW</span>
+                      <span class="badge hot">HOT</span>
+                    </div>
+                    <div class="prod-img">
+                      <img src="./img/item/N202UTS510.png" alt="N202UTS510" />
+                    </div>
+                    <div class="prod-info">
+                      <h4 class="item-name">내셔널지오그래픽 N202UTS510 핫 썸머 컨셉 티셔츠 1 ORANGE</h4>
+                      <div class="item-price">
+                        <span class="cost blind">59,000<span class="price-unit">원</span> </span>
+                        <span class="discount">59,000<span class="price-unit">원</span> </span>
+                      </div>
+                    </div>
+                  </a>
+                  <div class="thumb-layer">
+                    <div class="thumb-icon">
+                      <a href="#"> <i class="xi-heart-o"></i><span>찜하기</span> </a>
+                    </div>
+                    <div class="thumb-icon">
+                      <a href="#"> <i class="xi-cart-o"></i><span>장바구니</span> </a>
+                    </div>
+                  </div>
+                </li>
+                <li class="prod-thumb">
+                  <a href="#">
+                    <div class="badge-wrap">
+                      <span class="badge new">NEW</span>
+                      <span class="badge hot on">HOT</span>
+                    </div>
+                    <div class="prod-img">
+                      <img src="./img/item/N202UBS640.png" alt="N202UBS640" />
+                    </div>
+                    <div class="prod-info">
+                      <h4 class="item-name">내셔널지오그래픽 N202UBS640 유니 컬러 베이직 보드숏 BEIGE</h4>
+                      <div class="item-price">
+                        <span class="cost blind">59,000<span class="price-unit">원</span> </span>
+                        <span class="discount">59,000<span class="price-unit">원</span> </span>
+                      </div>
+                    </div>
+                  </a>
+                  <div class="thumb-layer">
+                    <div class="thumb-icon">
+                      <a href="#"> <i class="xi-heart-o"></i><span>찜하기</span> </a>
+                    </div>
+                    <div class="thumb-icon">
+                      <a href="#"> <i class="xi-cart-o"></i><span>장바구니</span> </a>
+                    </div>
+                  </div>
+                </li>
+                <li class="prod-thumb">
+                  <a href="#">
+                    <div class="badge-wrap">
+                      <span class="badge new">NEW</span>
+                      <span class="badge hot">HOT</span>
+                    </div>
+                    <div class="prod-img">
+                      <img src="./img/item/N205UHA060.png" alt="N205UHA060" />
+                    </div>
+                    <div class="prod-info">
+                      <h4 class="item-name">내셔널지오그래픽 모자 N205UHA060 플렉시블볼캡 WHITE</h4>
+                      <div class="item-price">
+                        <span class="cost blind">46,000<span class="price-unit">원</span> </span>
+                        <span class="discount">46,000<span class="price-unit">원</span> </span>
+                      </div>
+                    </div>
+                  </a>
+                  <div class="thumb-layer">
+                    <div class="thumb-icon">
+                      <a href="#"> <i class="xi-heart-o"></i><span>찜하기</span> </a>
+                    </div>
+                    <div class="thumb-icon">
+                      <a href="#"> <i class="xi-cart-o"></i><span>장바구니</span> </a>
+                    </div>
+                  </div>
+                </li>
+                <li class="prod-thumb">
+                  <a href="#">
+                    <div class="badge-wrap">
+                      <span class="badge new">NEW</span>
+                      <span class="badge hot">HOT</span>
+                    </div>
+                    <div class="prod-img">
+                      <img src="./img/item/N192ACR310.png" alt="N192ACR310" />
+                    </div>
+                    <div class="prod-info">
+                      <h4 class="item-name">내셔널지오그래픽 가방 N192ACR310 클리어 드라이백 10L 워터백 PINK</h4>
+                      <div class="item-price">
+                        <span class="cost">35,000<span class="price-unit">원</span> </span>
+                        <span class="discount">24,500<span class="price-unit">원</span> </span>
+                      </div>
+                    </div>
+                  </a>
+                  <div class="thumb-layer">
+                    <div class="thumb-icon">
+                      <a href="#"> <i class="xi-heart-o"></i><span>찜하기</span> </a>
+                    </div>
+                    <div class="thumb-icon">
+                      <a href="#"> <i class="xi-cart-o"></i><span>장바구니</span> </a>
+                    </div>
+                  </div>
+                </li>
+                <li class="prod-thumb">
+                  <a href="#">
+                    <div class="badge-wrap">
+                      <span class="badge new">NEW</span>
+                      <span class="badge hot">HOT</span>
+                    </div>
+                    <div class="prod-img">
+                      <img src="./img/item/N202UTS520.png" alt="N202UTS520" />
+                    </div>
+                    <div class="prod-info">
+                      <h4 class="item-name">내셔널지오그래픽 N202UTS520 핫 썸머 컨셉 티셔츠 2 PEONY PINK</h4>
+                      <div class="item-price">
+                        <span class="cost blind">59,000<span class="price-unit">원</span> </span>
+                        <span class="discount">59,000<span class="price-unit">원</span> </span>
+                      </div>
+                    </div>
+                  </a>
+                  <div class="thumb-layer">
+                    <div class="thumb-icon">
+                      <a href="#"> <i class="xi-heart-o"></i><span>찜하기</span> </a>
+                    </div>
+                    <div class="thumb-icon">
+                      <a href="#"> <i class="xi-cart-o"></i><span>장바구니</span> </a>
+                    </div>
+                  </div>
+                </li>
+                <li class="prod-thumb">
+                  <a href="#">
+                    <div class="badge-wrap">
+                      <span class="badge new">NEW</span>
+                      <span class="badge hot">HOT</span>
+                    </div>
+                    <div class="prod-img">
+                      <img src="./img/item/N185AFW030.png" alt="N185AFW030" />
+                    </div>
+                    <div class="prod-info">
+                      <h4 class="item-name">내셔널지오그래픽 신발 N185AFW030 QW-CLIP D 샌들 KHAKI</h4>
+                      <div class="item-price">
+                        <span class="cost">99,000<span class="price-unit">원</span> </span>
+                        <span class="discount">49,000<span class="price-unit">원</span> </span>
+                      </div>
+                    </div>
+                  </a>
+                  <div class="thumb-layer">
+                    <div class="thumb-icon">
+                      <a href="#"> <i class="xi-heart-o"></i><span>찜하기</span> </a>
+                    </div>
+                    <div class="thumb-icon">
+                      <a href="#"> <i class="xi-cart-o"></i><span>장바구니</span> </a>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <!-- new prod group : e -->
+      </section>
+      <!-- new products : e -->
+      <!-- top products : s -->
+      <section class="top-prod-area prod-list">
+        <div class="cont-top">
+          <h3 class="tit">TOP PRODUCTS</h3>
+        </div>
+        <!-- top prod group : s -->
+        <div class="prod-thumb-wrap">
+          <ul class="single-spacing">
+            <li class="prod-thumb">
+              <a href="#">
+                <div class="badge-wrap">
+                  <span class="badge new">NEW</span>
+                  <span class="badge hot on">HOT</span>
+                </div>
+                <div class="prod-img">
+                  <img src="./img/item/N202MPL810.png" alt="N202MPL810" />
+                </div>
+                <div class="prod-info">
+                  <h4 class="item-name">내셔널지오그래픽 N202MPL810 웰라카 피케 반팔 티셔츠 CARBON BLACK</h4>
+                  <div class="item-price">
+                    <span class="cost blind">59,000<span class="price-unit">원</span> </span>
+                    <span class="discount">59,000<span class="price-unit">원</span> </span>
+                  </div>
+                </div>
+              </a>
+              <div class="thumb-layer">
+                <div class="thumb-icon">
+                  <a href="#"> <i class="xi-heart-o"></i><span>찜하기</span> </a>
+                </div>
+                <div class="thumb-icon">
+                  <a href="#"> <i class="xi-cart-o"></i><span>장바구니</span> </a>
+                </div>
+              </div>
+            </li>
+            <li class="prod-thumb">
+              <a href="#">
+                <div class="badge-wrap">
+                  <span class="badge new">NEW</span>
+                  <span class="badge hot">HOT</span>
+                </div>
+                <div class="prod-img">
+                  <img src="./img/item/N202MJP920.png" alt="N202MJP920" />
+                </div>
+                <div class="prod-info">
+                  <h4 class="item-name">내셔널지오그래픽 N202MJP920 카니스 홑겹 스탠카라 점퍼 CARBON BLACK</h4>
+                  <div class="item-price">
+                    <span class="cost">159,000<span class="price-unit">원</span> </span>
+                    <span class="discount">139,000<span class="price-unit">원</span> </span>
+                  </div>
+                </div>
+              </a>
+              <div class="thumb-layer">
+                <div class="thumb-icon">
+                  <a href="#"> <i class="xi-heart-o"></i><span>찜하기</span> </a>
+                </div>
+                <div class="thumb-icon">
+                  <a href="#"> <i class="xi-cart-o"></i><span>장바구니</span> </a>
+                </div>
+              </div>
+            </li>
+            <li class="prod-thumb">
+              <a href="#">
+                <div class="badge-wrap">
+                  <span class="badge new on">NEW</span>
+                  <span class="badge hot">HOT</span>
+                </div>
+                <div class="prod-img">
+                  <img src="./img/item/N202MPL810_ARCTICMINT.png" alt="N202MPL810_ARCTICMINT" />
+                </div>
+                <div class="prod-info">
+                  <h4 class="item-name">내셔널지오그래픽 N202MPL810 웰라카 피케 반팔 티셔츠 ARCTIC MINT</h4>
+                  <div class="item-price">
+                    <span class="cost">69,000<span class="price-unit">원</span> </span>
+                    <span class="discount">59,000<span class="price-unit">원</span> </span>
+                  </div>
+                </div>
+              </a>
+              <div class="thumb-layer">
+                <div class="thumb-icon">
+                  <a href="#"> <i class="xi-heart-o"></i><span>찜하기</span> </a>
+                </div>
+                <div class="thumb-icon">
+                  <a href="#"> <i class="xi-cart-o"></i><span>장바구니</span> </a>
+                </div>
+              </div>
+            </li>
+            <li class="prod-thumb">
+              <a href="#">
+                <div class="badge-wrap">
+                  <span class="badge new">NEW</span>
+                  <span class="badge hot">HOT</span>
+                </div>
+                <div class="prod-img">
+                  <img src="./img/item/N202MRG620.png" alt="N202MRG620" />
+                </div>
+                <div class="prod-info">
+                  <h4 class="item-name">내셔널지오그래픽 N202MRG620 남성 베이직 빅 로고 래쉬가드 BLUE PRINT</h4>
+                  <div class="item-price">
+                    <span class="cost">69,000<span class="price-unit">원</span> </span>
+                    <span class="discount">59,000<span class="price-unit">원</span> </span>
+                  </div>
+                </div>
+              </a>
+              <div class="thumb-layer">
+                <div class="thumb-icon">
+                  <a href="#"> <i class="xi-heart-o"></i><span>찜하기</span> </a>
+                </div>
+                <div class="thumb-icon">
+                  <a href="#"> <i class="xi-cart-o"></i><span>장바구니</span> </a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!-- top prod group : e -->
+      </section>
+      <!-- top products : e -->
+      <!-- sale products : s -->
+      <section class="sale-prod-area prod-list">
+        <div class="cont-top">
+          <h3 class="tit">SALE PRODUCTS</h3>
+        </div>
+        <!-- sale prod group : s -->
+        <div class="prod-thumb-wrap">
+          <ul class="single-spacing">
+            <li class="prod-thumb">
+              <a href="#">
+                <div class="badge-wrap">
+                  <span class="badge new">NEW</span>
+                  <span class="badge hot">HOT</span>
+                </div>
+                <div class="prod-img">
+                  <img src="./img/item/N202ACR070.png" alt="N202ACR070" />
+                </div>
+                <div class="prod-info">
+                  <h4 class="item-name">내셔널지오그래픽 가방 N202ACR070 비치드클리어백 워터백 WHITE</h4>
+                  <div class="item-price">
+                    <span class="cost">49,000<span class="price-unit">원</span> </span>
+                    <span class="discount">39,000<span class="price-unit">원</span> </span>
+                  </div>
+                </div>
+              </a>
+              <div class="thumb-layer">
+                <div class="thumb-icon">
+                  <a href="#"> <i class="xi-heart-o"></i><span>찜하기</span> </a>
+                </div>
+                <div class="thumb-icon">
+                  <a href="#"> <i class="xi-cart-o"></i><span>장바구니</span> </a>
+                </div>
+              </div>
+            </li>
+            <li class="prod-thumb">
+              <a href="#">
+                <div class="badge-wrap">
+                  <span class="badge new">NEW</span>
+                  <span class="badge hot on">HOT</span>
+                </div>
+                <div class="prod-img">
+                  <img src="./img/item/N202ACR040.png" alt="N202ACR040" />
+                </div>
+                <div class="prod-info">
+                  <h4 class="item-name">내셔널지오그래픽 가방 N202ACR040 비치드패커블백 워터백 BLACK</h4>
+                  <div class="item-price">
+                    <span class="cost">41,000<span class="price-unit">원</span> </span>
+                    <span class="discount">31,000<span class="price-unit">원</span> </span>
+                  </div>
+                </div>
+              </a>
+              <div class="thumb-layer">
+                <div class="thumb-icon">
+                  <a href="#"> <i class="xi-heart-o"></i><span>찜하기</span> </a>
+                </div>
+                <div class="thumb-icon">
+                  <a href="#"> <i class="xi-cart-o"></i><span>장바구니</span> </a>
+                </div>
+              </div>
+            </li>
+            <li class="prod-thumb">
+              <a href="#">
+                <div class="badge-wrap">
+                  <span class="badge new">NEW</span>
+                  <span class="badge hot">HOT</span>
+                </div>
+                <div class="prod-img">
+                  <img src="./img/item/N192UTS910.png" alt="N192UTS910" />
+                </div>
+                <div class="prod-info">
+                  <h4 class="item-name">내셔널지오그래픽 티셔츠 N192UTS910 래타나 트리플 프린트 반팔 티셔츠 WHITE</h4>
+                  <div class="item-price">
+                    <span class="cost">59,000<span class="price-unit">원</span> </span>
+                    <span class="discount">41,300<span class="price-unit">원</span> </span>
+                  </div>
+                </div>
+              </a>
+              <div class="thumb-layer">
+                <div class="thumb-icon">
+                  <a href="#"> <i class="xi-heart-o"></i><span>찜하기</span> </a>
+                </div>
+                <div class="thumb-icon">
+                  <a href="#"> <i class="xi-cart-o"></i><span>장바구니</span> </a>
+                </div>
+              </div>
+            </li>
+            <li class="prod-thumb">
+              <a href="#">
+                <div class="badge-wrap">
+                  <span class="badge new">NEW</span>
+                  <span class="badge hot">HOT</span>
+                </div>
+                <div class="prod-img">
+                  <img src="./img/item/N192UTS930.png" alt="N192UTS930" />
+                </div>
+                <div class="prod-info">
+                  <h4 class="item-name">내셔널지오그래픽 티셔츠 N192UTS930 만텔라 빅 로고 반팔 티셔츠 M GREY</h4>
+                  <div class="item-price">
+                    <span class="cost">59,000<span class="price-unit">원</span> </span>
+                    <span class="discount">50,000<span class="price-unit">원</span> </span>
+                  </div>
+                </div>
+              </a>
+              <div class="thumb-layer">
+                <div class="thumb-icon">
+                  <a href="#"> <i class="xi-heart-o"></i><span>찜하기</span> </a>
+                </div>
+                <div class="thumb-icon">
+                  <a href="#"> <i class="xi-cart-o"></i><span>장바구니</span> </a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!-- sale prod group : e -->
+      </section>
+      <!-- sale products : e -->
+    </div>
+
+    <!-- sns : s -->
+    <section class="sns-wrap">
+      <div class="cont-wrap video-box-wrap">
+        <div class="cont-top">
+          <h3 class="tit">National Geographic Clip!</h3>
+        </div>
+        <ul class="video-box">
+          <li class="youtube-thumb">
+            <iframe src="https://www.youtube.com/embed/wuhgH70sAxA"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </li>
+          <li class="youtube-thumb">
+            <iframe src="https://www.youtube.com/embed/nVD46WzD1Vk"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </li>
+          <li class="youtube-thumb">
+            <iframe src="https://www.youtube.com/embed/_XqMYramoJ8"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </li>
+          <li class="youtube-thumb">
+            <iframe src="https://www.youtube.com/embed/MT_yFyE5z1U"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </li>
+          <li class="youtube-thumb">
+            <iframe src="https://www.youtube.com/embed/c593QoKvK8Y"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </li>
+        </ul>
+      </div>
+      <div class="cont-wrap sns-box-wrap">
+        <ul>
+          <li class="facebook sns-btn">
+            <a href="https://www.facebook.com/NATGEO.APPAREL.KR/" target="_blank">
+              <i class="xi-facebook"><span class="blind">facebook</span></i>
+            </a>
+          </li>
+          <li class="youtube sns-btn">
+            <a href="https://www.youtube.com/channel/UCKVExhV0R41VJr2q74J8ymw?view_as=subscriber" target="_blank">
+              <i class="xi-youtube"><span class="blind">youtube</span></i>
+            </a>
+          </li>
+          <li class="instagram sns-btn">
+            <a href="https://www.instagram.com/ng_apparel" target="_blank">
+              <i class="xi-instagram"><span class="blind">instagram</span></i>
+            </a>
+          </li>
+          <li class="blog sns-btn">
+            <a href="https://blog.naver.com/thenatureholdings" target="_blank">
+              <i class="xi-blogger"><span class="blind">naverblog</span></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <!-- sns : e -->
+  </section>
+  <!-- main : e -->
+  <!-- footer : s -->
+  <footer id="footer">
+    <div class="footer-ico-group">
+      <a href="#" class="fixed-btn scroll-top-btn">맨 위로 가기</a>
+      <a href="http://pf.kakao.com/_GQIxmC" class="fixed-btn kakao-profile" target="_blank">내셔널지오그래픽 카카오 프로필</a>
+    </div>
+    <div class="footer-top-wrap cont-wrap">
+      <div class="footer-inner">
+        <div class="footer-group">
+          <h4 class="tit">Information</h4>
+          <ul>
+            <li><a href="#">회사소개</a></li>
+            <li><a href="#">이용안내</a></li>
+            <li><a href="#">개인정보처리방침</a></li>
+            <li><a href="#">브랜드 사이트</a></li>
+            <li><a href="#">이용약관</a></li>
+            <li><a href="#">매장안내</a></li>
+          </ul>
+        </div>
+        <div class="footer-group">
+          <h4 class="tit">Notice</h4>
+          <ul>
+            <li><a href="#">내셔널지오그래픽 어패럴 스마트앱 출시</a></li>
+            <li><a href="#">[내셔널지오그래픽] 더 오리지널6 텐트설치 영상</a></li>
+            <li><a href="#">[내셔널지오그래픽] 더 오리지널 텐트4 설치 영상</a></li>
+            <li><a href="#">내셔널지오그래픽 캐리어 비밀번호 변경 방법 - B type</a></li>
+            <li><a href="#">내셔널지오그래픽 캐리어 비밀번호 변경 방법 - A type</a></li>
+            <li><a href="#">내셔널지오그래픽 캐리어 비밀번호 변경 방법 (범퍼 캐리어)</a></li>
+          </ul>
+        </div>
+        <div class="footer-group">
+          <h4 class="tit">Contact Us</h4>
+          <ul>
+            <li class="cs-center">
+              <div class="call-num"><i class="xi-call"></i><a href="tel:1588-2906">1588-2906</a></div>
+              <span>평일 : 10:00am ~ 5:00pm</span>
+              <span>토/일, 공휴일은 휴무입니다.</span>
+            </li>
+            <li class="bank-account">
+              123-456789-87-654
+              <span>은행 : 기업은행</span>
+              <span>예금주 : (주)더네이쳐홀딩스</span>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-group">
+          <h4 class="tit">Company</h4>
+          <div class="company-info">
+            <span class="info-block no-dot">(주)더네이쳐홀딩스</span>
+            <span class="info-block">대표 : 박영준</span>
+            <span class="info-block">사업자등록번호 : 106-86-26388</span>
+            <span class="info-block">통신판매업신고번호 : 제2015-서울금천-0414호</span>
+            <span class="info-block">개인정보관리자 : 전제구</span>
+            <address>서울특별시 금천구 가산디지털2로 30 (알에스엠타워) 11층</address>
+            <span class="info-block no-dot line">Tel. : <a href="tel:1588-2906">1588-2906</a></span>
+            <span class="info-block no-dot line">Fax : 02-3274-0805</span>
+            <span class="info-block no-dot line">e-mail : <a href="mailto:jackman@thenatureholdings.co.kr"
+                class="yellow">jackman@thenatureholdings.co.kr</a></span>
+          </div>
         </div>
       </div>
-      <div class="footer-bottom-wrap">
-        <div class="footer-inner cont-wrap">
-          <span>National Geographic Partners LLC. All rights reserved.</span>
-          <span class="portfolio-notice">이 페이지는 비상업용, 개인 포트폴리오 목적으로 제작되었습니다.</span>
-        </div>
+    </div>
+    <div class="footer-bottom-wrap">
+      <div class="footer-inner cont-wrap">
+        <span>National Geographic Partners LLC. All rights reserved.</span>
+        <span class="portfolio-notice">이 페이지는 비상업용, 개인 포트폴리오 목적으로 제작되었습니다.</span>
       </div>
-    </footer>
-    <!-- footer : e -->
-  </body>
+    </div>
+  </footer>
+  <!-- footer : e -->
+
+  <!-- bxslider js -->
+  <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+  <script src="./js/default.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      //main top banner 슬라이드
+      $(".top-banner-group").bxSlider({
+        auto: true,
+        pause: 7000,
+      });
+
+      //top product, sale product 제품 슬라이드
+      $(".single-spacing").bxSlider({
+        minSlides: 3,
+        maxSlides: 3,
+        moveSlides: 1,
+        slideWidth: 345,
+        slideMargin: 40,
+        infiniteLoop: true,
+        auto: true,
+        pause: 5000,
+        speed: 500,
+        pager: false,
+      });
+
+      //new product 제품 슬라이드
+      $(".double-spacing").bxSlider({
+        minSlides: 1,
+        maxSlides: 1,
+        moveSlides: 1,
+        infiniteLoop: true,
+        auto: true,
+        pause: 5000,
+        speed: 500,
+        pager: false,
+      });
+    });
+  </script>
+</body>
+
 </html>
